@@ -1,5 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
+* {
+  box-sizing: border-box;
+}
 
 body, 
 html {
@@ -77,6 +80,45 @@ section {
 }
 
 /* TO DO: replace IDs with classes where possible according to CSS style guide.*/
+
+/*CSS Grid Styles*/
+.main-header {
+  grid-area: header;
+}
+
+.main-nav {
+  grid-area: nav;
+}
+
+.content {
+  grid-area: content;
+
+}
+
+.filter {
+  grid-area: filter;
+}
+
+.main-footer {
+  grid-area: footer;
+}
+
+.restaurants {
+  grid-area: restaurants;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap:20px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content"
+    "filter"
+    "restaurants"
+    "footer"
+}
+
 #maincontent { 
   background-color: #f3f3f3;
   min-height: 100%;
@@ -95,7 +137,7 @@ section {
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #252831;
   text-align:center;
 }
