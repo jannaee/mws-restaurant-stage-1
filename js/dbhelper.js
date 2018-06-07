@@ -8,7 +8,7 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    /*const port = 1fab1f3bc2a3405a8012b7dee5333330.vfs.cloud9.us-east-2.amazonaws.com // Change this to your server port*/
+    /*const port = 1fab1f3bc2a3405a8012b7dee5333330.vfs.cloud9.us-east-2.amazonaws.com // */ /*Hardcoded the EC2 Instance instead of the port and template literal of port in the return*/
     return `http://1fab1f3bc2a3405a8012b7dee5333330.vfs.cloud9.us-east-2.amazonaws.com/data/restaurants.json`;
   }
 
