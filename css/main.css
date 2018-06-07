@@ -9,6 +9,12 @@ html {
   height: 100%;
 }
 
+body {
+  font-family: Roboto;
+  font-size: 12px;
+  color: #424242;
+}
+
 Img, 
 embed, 
 object, 
@@ -16,11 +22,13 @@ video {
   max-width: 100%;
 }
 
+/*Adding Tap Targets*/
 nav,
 a, 
 button {
   min-width: 50px;
   min-height: 50px;
+  padding: 1.5em;
 }
 
 
@@ -32,6 +40,7 @@ ul, li {
 a {
 	color: orange;
 	text-decoration: none;
+	padding: 1.5em;
 }
 
 a:hover, a:focus {
@@ -168,7 +177,7 @@ nav h1 a {
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
-  width: 200px;
+  width: 100%;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -188,7 +197,7 @@ nav h1 a {
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  width: 100%;
 }
 
 #restaurants-list .restaurant-img {
