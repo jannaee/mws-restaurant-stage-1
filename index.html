@@ -13,7 +13,6 @@
     <script type="application/javascript" charset="utf-8" src="js/dbhelper.js" async></script>
     <script type="application/javascript" charset="utf-8" src="js/main.js" async></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3P4uJpZHJX9cUeQ8Y2C70thVnFSScKMI&libraries=places&callback=initMap"></script>
-
   </head>
 
   <body class="wrapper">
@@ -29,7 +28,7 @@
       </section>
     </main>
 
-    <aside>
+    <section class="filtering">
         <div class="filter-options">
           <h2>Filter Results</h2>
           <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
@@ -39,12 +38,12 @@
             <option value="all">All Cuisines</option>
           </select>
         </div>
-    </aside>
-    <section class="result-list">
+    </section>
+    <article>
       <div>
         <ul id="restaurants-list"></ul>
       </div>
-    </section>
+    <article>
 
     <footer id="footer">
       Copyright &copy; 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.

@@ -86,16 +86,16 @@ section {
   grid-area: head;
 }
 
-.result-list {
-  grid-area: result;
-}
 .wrapper > main {
   grid-area: main;
 }
 
-.wrapper > aside {
-  grid-area: aside;
-  z-index: 1;
+.wrapper > section {
+  grid-area: sect;
+}
+
+.wrapper > article {
+  grid-area: art;
 }
 
 .wrapper > footer {
@@ -104,14 +104,14 @@ section {
 
 .wrapper {
   display: grid;
-  width: 100%;
-  grid-template-areas: "head head"
-                       "main main"
-                       "aside aside"
-                       "result result"
-                       "foot foot";
-  /* grid-template-rows: auto;
-  grid-template-columns: 1fr 2fr; */
+  grid-template-areas: 
+                      "head head"
+                      "sect sect"
+                      "art main"
+                      "foot foot";
+  grid-template-columns: 40% 60%;
+                    
+
 }
 
 #maincontent { 
@@ -191,8 +191,7 @@ nav h1 a {
 
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  width: 100%;
-  height: 50px;
+  /* width: calc(70% - 80px); */
   background-color: #3397DB;
   align-items: center;
 }
@@ -214,7 +213,7 @@ nav h1 a {
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
-  width: 100%;
+  width: 95%;
 }
 
 /* ====================== Restaurant Listing ====================== */
