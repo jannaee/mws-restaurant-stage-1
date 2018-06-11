@@ -82,30 +82,28 @@ section {
 /* TO DO: replace IDs with classes where possible according to CSS style guide.*/
 
 /*CSS Grid Styles*/
-.main-header {
-  grid-area: header;
+.wrapper > header {
+  grid-area: head;
 }
 
-.main-nav {
+.wrapper > nav {
   grid-area: nav;
 }
 
-.content {
-  grid-area: content;
+.wrapper > main {
+  grid-area: main;
 
 }
 
-.filter {
-  grid-area: filter;
+.wrapper > aside {
+  grid-area: aside;
 }
 
-.main-footer {
-  grid-area: footer;
+.wrapper > footer {
+  grid-area: foot;
 }
 
-.restaurants {
-  grid-area: restaurants;
-}
+
 
 .wrapper {
   display: grid;
