@@ -21,4 +21,27 @@
         
     /*}*/
     
+}@media (max-width: 768px){
+    .wrapper {
+        display: grid;
+    }
+    
+}
+
+@media (min-width: 769px){
+    .wrapper {
+        background-color: pink;
+        grid-template-columns: 1fr 3fr; /*fr= the fraction of the space taken up*/
+        grid-template-areas:
+            "header nav"
+            "content content"
+            "filter restaurants"
+            "footer footer";
+    }
+    /*#restaurants-list ul li{*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
+        
+    /*}*/
+    
 }
