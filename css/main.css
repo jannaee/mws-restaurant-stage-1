@@ -86,35 +86,32 @@ section {
   grid-area: head;
 }
 
-.wrapper > nav {
-  grid-area: nav;
+.result-list {
+  grid-area: result;
 }
-
 .wrapper > main {
   grid-area: main;
-
 }
 
 .wrapper > aside {
   grid-area: aside;
+  z-index: 1;
 }
 
 .wrapper > footer {
   grid-area: foot;
 }
 
-
-
 .wrapper {
   display: grid;
-  grid-gap:20px;
-  grid-template-areas:
-    "header"
-    "nav"
-    "content"
-    "filter"
-    "restaurants"
-    "footer"
+  width: 100%;
+  grid-template-areas: "head head"
+                       "main main"
+                       "aside aside"
+                       "result result"
+                       "foot foot";
+  /* grid-template-rows: auto;
+  grid-template-columns: 1fr 2fr; */
 }
 
 #maincontent { 
@@ -137,7 +134,7 @@ nav {
   width: 100%;
   height: 60px;
   background-color: #252831;
-  text-align:center;
+  text-align: center;
 }
 
 nav h1 {

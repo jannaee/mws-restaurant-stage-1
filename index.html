@@ -9,25 +9,28 @@
     <link rel="stylesheet" type="text/css" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" >    
     <link rel="stylesheet" type="text/css" href="css/main.css"> 
-    <link rel="stylesheet" type="text/css" href="css/responsive.css"> 
+    <!-- <link rel="stylesheet" type="text/css" href="css/responsive.css">  -->
+    <script type="application/javascript" charset="utf-8" src="js/dbhelper.js" async></script>
+    <script type="application/javascript" charset="utf-8" src="js/main.js" async></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3P4uJpZHJX9cUeQ8Y2C70thVnFSScKMI&libraries=places&callback=initMap"></script>
 
   </head>
 
   <body class="wrapper">
     <header>
-
+      <nav>
+        <h1><a href="/">Restaurant Reviews</a></h1>
+      </nav>
     </header>
-
-    <nav >
-      <h1><a href="/">Restaurant Reviews</a></h1>
-    </nav>
 
     <main id="maincontent">
       <section id="map-container">
         <div id="map"></div>
       </section>
-      <section>
-        <div class="filter-options" >
+    </main>
+
+    <aside>
+        <div class="filter-options">
           <h2>Filter Results</h2>
           <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
@@ -36,16 +39,16 @@
             <option value="all">All Cuisines</option>
           </select>
         </div>
+    </aside>
+    <section class="result-list">
+      <div>
         <ul id="restaurants-list"></ul>
-      </section>
-    </main>
+      </div>
+    </section>
+
     <footer id="footer">
       Copyright &copy; 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
-
-    <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
-    <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3P4uJpZHJX9cUeQ8Y2C70thVnFSScKMI&libraries=places&callback=initMap"></script>
   </body>
 
 </html>

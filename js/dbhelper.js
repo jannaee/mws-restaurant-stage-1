@@ -8,8 +8,11 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    /*const port = 8080 // Change this to your server port*/
-    return `http://1fab1f3bc2a3405a8012b7dee5333330.vfs.cloud9.us-east-2.amazonaws.com/data/restaurants.json`;
+    const port = 5500 // Change this to your server port
+    return `http://localhost:${port}/data/restaurants.json`;
+
+    //When working in AWS use the following path
+    // return `http://1fab1f3bc2a3405a8012b7dee5333330.vfs.cloud9.us-east-2.amazonaws.com/data/restaurants.json`;
   }
 
   /**
