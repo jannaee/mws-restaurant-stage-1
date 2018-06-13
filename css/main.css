@@ -91,6 +91,8 @@ section {
 }
 
 .wrapper > section {
+  padding: 0 30px;
+  background-color: #3397db;
   grid-area: sect;
 }
 
@@ -111,7 +113,7 @@ section {
                       "art art"
                       "foot foot";
   grid-template-columns: 25% 75%;
-  grid-template-rows: 10% 400px auto;
+  grid-template-rows: 60px 500px auto;
                     
 
 }
@@ -186,7 +188,7 @@ nav h1 a {
 
 /* ====================== Map ====================== */
 #map {
-  height: 400px;
+  height: 500px;
   width: 100%;
   background-color: #ccc;
 }
@@ -198,21 +200,22 @@ nav h1 a {
 }
 
 .filter-options h2 {
-  color: #f18200;
+  color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 1.25rem;
+  font-weight: 100;
   line-height: 1;
-  margin: 20px 20px;
+  margin: 25px 20px 8px 15px;
 }
 
 .filter-options select {
   background-color: #fff;
-  border: 1px solid #444;
+  border: 1px solid #fff;
   border-radius: 5px;
-  font-family: Roboto ,sans-serif;
-  font-size: 11pt;
-  height: 35px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: .75rem;
+  height: 40px;
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
