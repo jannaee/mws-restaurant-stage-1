@@ -18,7 +18,7 @@
   }
 
   nav h1 a {
-      font-size: 4vw;
+      font-size: 3vw;
   }
 
   /* Parent container for flex items */
@@ -36,5 +36,13 @@
     flex: 1 auto;
     width: auto;
   }
+}
+
+@media (max-width: 400px){
+    nav h1 a {
+        white-space: nowrap;
+        font-size: 3vw;
+    }
+
 }
 /*Swap Restaruant Review for Logo*/
