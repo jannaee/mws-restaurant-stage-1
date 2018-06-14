@@ -12,24 +12,28 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 300px auto;
   }
+
   #map {
     height: 300px;
   }
-  nav h1 a{
+
+  nav h1 a {
       font-size: 4vw;
   }
-  .filtering{
-    display: flex;
-    justify-content: space-around;
 
+  /* Parent container for flex items */
+  .filter-options {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
   }
-  #cuisines-select, #neighborhoods-select {
-    background-color: #fff;
-    font-weight: 100;
-    margin: 15px;
-    padding: 10px 10px;
-    text-align: center;
-    flex-direction: row;
+
+  .filter-options h2 {
+    margin-top: 10px;
+  }
+  
+  #cuisines-select, #neighborhoods-select, .filter-options h2 {
+    flex: 1 auto;
     width: auto;
   }
 }
