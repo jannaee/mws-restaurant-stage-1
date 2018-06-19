@@ -56,7 +56,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #aaa;
-  font-size: .5em;
+  font-size: .75em;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
@@ -79,9 +79,10 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 .wrapper > article {
   grid-area: art;
 }
-.wrapper > footer {
+#footer {
   grid-area: foot;
 }
+
 .wrapper {
   display: grid;
   grid-template-areas: 
@@ -186,7 +187,6 @@ nav h1 a {
   width: 95%;
   height: 200px;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  grid-gap: 2% 2%;    
 }
 
 #restaurants-list li {
