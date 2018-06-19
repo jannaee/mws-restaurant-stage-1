@@ -1,7 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
-
-body,td,th,p{
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+Img, embed, object, video {
+  max-width: 100%;
+}
+body, td, th, p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1em;
 	color: #333;
@@ -12,15 +23,18 @@ body {
 	margin: 0;
 	position: relative;
 }
+
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1em;
 	color: #333;
 }
+
 a {
 	color: orange;
-	text-decoration: none;
+  text-decoration: none;
 }
+
 a:hover, a:focus {
 	color: #3397db;
 	text-decoration: none;
@@ -36,7 +50,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	display: block;
 }
 #maincontent {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   min-height: 100%;
 }
 #footer {
@@ -48,18 +62,50 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-align: center;
   text-transform: uppercase;
 }
+
+/*CSS Grid Styles*/
+.wrapper > header {
+  grid-area: head;
+}
+#map {
+  grid-area: main;
+}
+.wrapper > section {
+  padding: 2% 30px;
+  background-color: #3397db;
+  text-align: center;
+  grid-area: sect;
+}
+.wrapper > article {
+  grid-area: art;
+}
+.wrapper > footer {
+  grid-area: foot;
+}
+.wrapper {
+  display: grid;
+  grid-template-areas: 
+                      "head head"
+                      "main main"
+                      "sect sect"
+                      "art art"
+                      "foot foot";
+  grid-template-columns: 100%;
+  grid-template-rows: 150px 400px 15% 100px auto;
+}
+
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  height: 80px;
-  background-color: #252831;
+  background-color: #ffffff;
   text-align:center;
+  margin-top: 5%;
 }
 nav h1 {
   margin: auto;
 }
 nav h1 a {
-  color: #fff;
+  color: #252831;
   font-size: 14pt;
   font-weight: 200;
   letter-spacing: 10px;
@@ -122,11 +168,11 @@ nav h1 a {
   border: 1px solid #fff;
   font-family: Arial,sans-serif;
   font-size: 11pt;
-  height: 35px;
+  height: 40px;
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
-  width: 200px;
+  width: 20%;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -136,23 +182,27 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: grid; /*Grid for Restaurant Results*/
+  width: 95%;
+  height: 200px;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-gap: 2% 2%;    
 }
+
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
   margin: 15px;
-  /* min-height: 380px; */
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
   margin: 0;
   max-width: 100%;
-  /* min-height: 248px; */
   min-width: 100%;
 }
 #restaurants-list li h1 {
@@ -258,7 +308,7 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -273,3 +323,46 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+/*Media query for files */
+
+@media (max-width: 768px){
+  .wrapper {
+      display: grid;
+      grid-template-areas:
+       "head head"
+       "main main"
+       "sect sect"
+       "art art"
+       "foot foot";
+      grid-template-rows: 100px 400px 200px auto 100px;
+ }
+
+ #map {
+   height: 400px;
+ }
+
+ nav h1 a {
+     font-size: 3vw;
+ }
+
+ /* Parent container for flex items */
+ .filter-options {
+   display: inline-flex;
+   flex-flow: row wrap;
+   justify-content: center;
+ }
+
+ .filter-options h2 {
+   margin-top: 10px;
+ }
+ 
+ #cuisines-select, #neighborhoods-select, .filter-options h2 {
+   width: 100%;
+ }
+
+ #restaurants-list {
+  display: flex;
+  flex-direction: column;
+ }
+}
+
