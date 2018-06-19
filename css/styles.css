@@ -7,7 +7,6 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
 }
 Img, embed, object, video {
   max-width: 100%;
@@ -18,10 +17,20 @@ body, td, th, p{
 	color: #333;
 	line-height: 1.5;
 }
+
 body {
 	background-color: #fdfdfd;
-	margin: 0;
-	position: relative;
+  position: relative;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr;  
+  grid-template-areas: 
+      "head"
+      "main"
+      "sect"
+      "art"
+      "foot";
+grid-template-rows: 150px auto auto 1fr 80px;
 }
 
 ul, li {
@@ -64,36 +73,28 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 
 /*CSS Grid Styles*/
-.wrapper > header {
+nav {
   grid-area: head;
 }
-#map {
+
+main {
   grid-area: main;
 }
-.wrapper > section {
+
+section {
   padding: 2% 30px;
   background-color: #3397db;
   text-align: center;
   grid-area: sect;
 }
-.wrapper > article {
+.container {
   grid-area: art;
 }
-#footer {
+/* footer {
   grid-area: foot;
-}
+} */
 
-.wrapper {
-  display: grid;
-  grid-template-areas: 
-                      "head head"
-                      "main main"
-                      "sect sect"
-                      "art art"
-                      "foot foot";
-  grid-template-columns: 100%;
-  grid-template-rows: 150px 400px 15% 100px auto;
-}
+
 
 /* ====================== Navigation ====================== */
 nav {
@@ -178,10 +179,8 @@ nav h1 a {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
-  background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
-  padding: 30px 15px 60px;
   text-align: center;
   display: grid; /*Grid for Restaurant Results*/
   width: 95%;
@@ -253,8 +252,8 @@ nav h1 a {
   width: 100%;
 }
 .inside #footer {
-  bottom: 0;
-  position: absolute;
+  /* bottom: 0;
+  position: absolute; */
   width: 50%;
 }
 #restaurant-name {
@@ -326,14 +325,14 @@ nav h1 a {
 /*Media query for files */
 
 @media (max-width: 768px){
-  .wrapper {
+  body {
       display: grid;
       grid-template-areas:
-       "head head"
-       "main main"
-       "sect sect"
-       "art art"
-       "foot foot";
+       "head"
+       "main" 
+       "sect" 
+       "art" 
+       "foot"; 
       grid-template-rows: 100px 400px 200px auto 100px;
  }
 
