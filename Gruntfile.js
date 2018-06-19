@@ -1,1 +1,0 @@
-// Future grunt tasks for auto resizing images
