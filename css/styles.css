@@ -73,14 +73,15 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 
 /*CSS Grid Styles*/
+body{
+  grid-area: body;
+}
 nav {
   grid-area: head;
 }
-
 main {
   grid-area: main;
 }
-
 section {
   padding: 2% 30px;
   background-color: #3397db;
@@ -89,10 +90,11 @@ section {
 }
 .container {
   grid-area: art;
+  background-color: #252831;
 }
-/* footer {
+footer {
   grid-area: foot;
-} */
+}
 
 
 
@@ -101,7 +103,7 @@ nav {
   width: 100%;
   background-color: #ffffff;
   text-align:center;
-  margin-top: 5%;
+  margin-top: 50px;
 }
 nav h1 {
   margin: auto;
@@ -195,7 +197,6 @@ nav h1 a {
   margin: 15px;
   padding: 0 30px 25px;
   text-align: left;
-
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -267,7 +268,7 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	max-width: 100%;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -344,13 +345,13 @@ nav h1 a {
      font-size: 3vw;
  }
 
- /* Parent container for flex items */
+ /* Parent container for flex items 
  .filter-options {
    display: inline-flex;
    flex-flow: row wrap;
    justify-content: center;
  }
-
+*/
  .filter-options h2 {
    margin-top: 10px;
  }
