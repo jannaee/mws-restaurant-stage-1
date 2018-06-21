@@ -179,10 +179,9 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   more.onclick = function (){
     console.log(restaurant);
-
     more.href = DBHelper.urlForRestaurant(restaurant);
+    window.location = more.href;
   }
-
   li.append(more)
   return li
 }
