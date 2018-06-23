@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -17,27 +18,25 @@
     <title>Restaurant Reviews</title>
   </head>
 
-  <body class="wrapper">
+  <body class="siteTest">
     <!-- Beginning header -->
     <header>
       <!-- Beginning nav -->
       <nav>
-        <h1><a href="/">Restaurant Reviews</a></h1>
+        <h1><a href="/" aria-label="Restaurant Reviews">Restaurant Reviews</a></h1>
       </nav>
       <!-- End nav -->
     </header>
     <!-- End header -->
-
     <!-- Beginning main -->
     <main id="maincontent">
       <!-- Beginning map -->
-      <div id="map-container">
-        <div id="map"></div>
-      </div>
+      <section id="map-container" aria-label="Map by Mapbox">
+        <div role="application" id="map"></div>
+      </section>
       <!-- End map -->
-    </main>
       <!-- Beginning restaurant filtering -->
-      <section class="filtering">
+      <section>
         <div class="filter-options">
           <h2>Filter Results</h2>
           <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
@@ -49,26 +48,21 @@
         </div>
       </section>
       <!-- End restaurant filtering -->
-
       <!-- Beginning restaurant results -->
-      <article>
-        <div class="container"> 
-          <ul id="restaurants-list"></ul>
-        </div>
-      </article>
+      <section id="restaurants-list"></section>
       <!--End of restaurant results-->    
-
-    <!-- Beginning scripts -->
+    </main>
+    <!-- Beginning footer -->
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
     <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
-    <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
-    <!-- End scripts -->
-
-    <!-- Beginning footer -->
-
+    <script type="application/javascript" charset="utf-8" src="js/main.js"  ></script>    
+    
     <footer id="footer">
       Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
     <!-- End footer -->
+    <!-- Beginning scripts -->
+
+    <!-- End scripts -->
   </body>
 </html>

@@ -157,7 +157,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  * Create restaurant HTML.
  */
 createRestaurantHTML = (restaurant) => {
-  const li = document.createElement('li');
+  const li = document.createElement('figure');
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
@@ -179,7 +179,6 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
   more.onclick = function (){
-    console.log(restaurant);
     more.href = DBHelper.urlForRestaurant(restaurant);
     window.location = more.href;
   }
