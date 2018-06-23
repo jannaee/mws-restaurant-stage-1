@@ -8,9 +8,7 @@
     width: 80%;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-columns: 1fr;
-
+    height: auto;
 }
   .content {
     min-height: calc(100vh + 50px);
