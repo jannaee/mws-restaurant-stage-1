@@ -5,8 +5,7 @@
 }
 body, html {
   margin: 0;
-  padding: 0;
-  width: 100%;
+  padding: 0 5%;
 }
 Img, embed, object, video {
   max-width: 100%;
@@ -329,29 +328,18 @@ nav h1 a {
   body {
       display: grid;
       grid-template-areas:
-       "head"
-       "main" 
-       "sect" 
-       "art" 
-       "foot"; 
+        "head"
+        "main" 
+        "sect" 
+        "art" 
+        "foot"; 
       grid-template-rows: 100px 400px 200px auto 100px;
- }
+  }
 
  #map {
    height: 400px;
  }
 
- nav h1 a {
-     font-size: 3vw;
- }
-
- /* Parent container for flex items 
- .filter-options {
-   display: inline-flex;
-   flex-flow: row wrap;
-   justify-content: center;
- }
-*/
  .filter-options h2 {
    margin-top: 10px;
  }
@@ -366,3 +354,9 @@ nav h1 a {
  }
 }
 
+@media (max-width: 530px){
+  header {
+    margin-top: -35px;
+  } 
+
+}
