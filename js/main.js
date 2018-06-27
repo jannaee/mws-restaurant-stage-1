@@ -164,8 +164,20 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
+  /**
+ * Setting srcset options for responsive images.
+ */
+  const sourceSet = document.createAttribute('srcset');
+  sourceSet.value='srcset';
+  image.setAttributeNode(sourceSet);
+  sourceSet.value =`/img/${restaurant.id}-sm.jpg,
+  /img/${restaurant.id}.jpg 2x`;
+
+ /**
+ * Created alt tag.
+ */
   const altTag = document.createAttribute('alt');
-  altTag.value = "Image of restaurant";
+  altTag.value = "Featured images from restaurant";
   image.setAttributeNode(altTag);
 
   const name = document.createElement('h2');
