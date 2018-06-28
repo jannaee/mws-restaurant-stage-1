@@ -218,15 +218,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 } 
 
-/**
- * Adding a service worker.
- */
-const worker = new Worker('/js/sw.js');
-worker.addEventListener('message', function(event){
-  console.log('Ive got data', event.data);
-}, false);
 
-worker.postMessage('hello you');
 
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
