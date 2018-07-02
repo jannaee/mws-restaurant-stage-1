@@ -20,22 +20,23 @@
   </head>
   <body>
     <header>
+      <a class="skip-main" href="#neighborhoods-select">Skip to main</a>
       <nav>
         <h1><a href="/" aria-label="Restaurant Reviews">Restaurant Reviews</a></h1>
       </nav>
     </header>
     
     <main id="maincontent" class="wrapper">
-      <section id="map-container" aria-label="Map by Mapbox">
-        <div role="application" id="map"></div>
+      <section tabindex="-1"  id="map-container">
+        <div tabindex="-1" id="map"></div>
       </section>
       <section class="content filter-options">
-        <div class="filterSelect">
-          <h2>Filter Results</h2>
-          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <div class="filterSelect" role="main">
+          <h2 id="find_a_restaurant">Find a Restaurant</h2>
+          <select role="listbox" aria-labelledby="find_a_restaurant" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
           </select>
-          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <select role="listbox" aria-labelledby="find_a_restaurant" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
             <option value="all">All Cuisines</option>
           </select>
         </div>
@@ -46,7 +47,7 @@
     <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
     <script type="application/javascript" charset="utf-8" src="js/main.js"  ></script>    
     <footer id="footer">
-      Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+      Copyright (c) 2018 <a href="index.html">Restaurant Reviews</a> All Rights Reserved.
     </footer>
   </body>
 </html>
