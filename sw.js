@@ -69,7 +69,23 @@ self.addEventListener('fetch', function(event) {
         }
         //clone the request and response
         let requestClone = event.request.clone();
-        fetch (requestClone)
+        fetch (requestClone).then(
+          function(response){
+            if (!response){//if there is no response console notice
+              console.log("[Service worker] no response");
+              return response;
+            }
+            //if there is a response clone the response first and then return it
+            let responseClone = response.clone();
+            //open the cache and put the request
+            caches.open(cacheName).then(
+              function(cache){
+                cache.put(event.request, responseClone);
+                return response;
+              }
+            )
+          }
+        )
       return fetch(event.request);
     })
   );
