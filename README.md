@@ -12,7 +12,7 @@ You have been provided the code for a restaurant reviews website. The code has a
 
 ### What do I do from here?
 
-1. In a terminal,  use `python -m http.server 8000`
+1. I am running the project from python version 3.6.5 using the integrated terminal within Visual Studio code. The command that works for me is `python -m http.server 8000`. My project is set up to port 8000 now, where it was previously set to 127.0.0.1:5500.
 
 2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
 3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
