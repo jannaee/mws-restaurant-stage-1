@@ -12,33 +12,23 @@ class DBHelper {
     return `http://localhost:${port}/restaurants`;
   }
 
-
-
   /**
    * Fetch all restaurants.
    */
   static fetchRestaurants(callback) {
-    function status (response){
-      if (response.status >=200 && response.status < 300) {
-        return Promise.resolve(response)
-      } else {
-        return Promise.reject(new Error(response.statusText))
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', DBHelper.DATABASE_URL);
+    xhr.onload = () => {
+      if (xhr.status === 200) { // Got a success response from server!
+        // const json = JSON.parse(xhr.responseText);
+        const restaurants = JSON.parse(xhr.responseText);
+        callback(null, restaurants);
+      } else { // Oops!. Got an error from server.
+        const error = (`Request failed. Returned status of ${xhr.status}`);
+        callback(error, null);
       }
-    } 
-
-    function json(response){
-      return response.json()
-   }
-            
-    fetch(url, {method: "GET"})
-    .then(
-        function(response) {
-          //if there is something wrong with the retrieving the response
-          if (response.status !== 200) { 
-            console.log('Error' + response.status);
-            return;
-          }
-        }
+    };
+    xhr.send();
   }
 
   /**
@@ -50,7 +40,7 @@ class DBHelper {
       if (error) {
         callback(error, null);
       } else {
-        const restaurant = restaurants;
+        const restaurant = restaurants.find(r => r.id == id);
         if (restaurant) { // Got the restaurant
           callback(null, restaurant);
         } else { // Restaurant does not exist in the database
