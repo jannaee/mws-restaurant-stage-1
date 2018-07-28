@@ -29,8 +29,7 @@ class DBHelper {
     function json(response){
       return response.json()
    }
-             
-    
+            
     fetch(url, {method: "GET"})
     .then(
         function(response) {
