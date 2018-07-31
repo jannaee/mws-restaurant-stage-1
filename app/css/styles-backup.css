@@ -22,7 +22,7 @@ Img, embed, object, video {
 }
 
 body, td, th, p {
-	color: #666;
+  color: #666;
   font-family: "Roboto","Helvetica",arial,sans-serif;
   font-size: 1em;
   line-height: 24px;
@@ -30,22 +30,22 @@ body, td, th, p {
 }
 
 ul, li {
-	font-family: "Roboto","Helvetica",arial,sans-serif;
-	font-size: 1em;
-	color: #333;
+  font-family: "Roboto","Helvetica",arial,sans-serif;
+  font-size: 1em;
+  color: #333;
 }
 
 a {
-	color: orange;
+  color: orange;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: #3397db;
-	text-decoration: none;
+  color: #3397db;
+  text-decoration: none;
 }
 a img{
-	border: none 0px #fff;
+  border: none 0px #fff;
 }
 
 /* ====================== A11y Styles ====================== */
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px;
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 
 #maincontent {
@@ -309,7 +309,7 @@ background-color: #B01232;
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	max-width: 100%;
+  max-width: 100%;
 }
 #restaurant-container{
   border-bottom: 1px solid #d9d9d9;

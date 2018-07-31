@@ -28,3 +28,11 @@ Most of the code in this project has been written to the ES6 JavaScript specific
 
 
 
+## Project Overview Stage 2
+Steps to complete
+1. Fork and clone the server repository. Use the development server to develop your project code.
+
+2. Change the data source for your restaurant requests to pull JSON from the server, parse the response and use the response to generate the site UI.
+
+3. Cache the JSON responses for offline use by using the IndexedDB API.
+Follow the recommendations provided by Lighthouse to achieve the required performance targets.
