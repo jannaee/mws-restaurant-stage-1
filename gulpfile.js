@@ -1,17 +1,18 @@
 // generated on 2018-07-28 using generator-webapp 3.0.1
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
+// const babelify = require("babelify");
+const browserify = require('browserify');
 const browserSync = require('browser-sync').create();
 const del = require('del');
-const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
+const wiredep = require('wiredep').stream;
 const sass = require('gulp-sass');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 let dev = true;
-
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -79,23 +80,18 @@ gulp.task('img', () => {
     .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
-    .concat('app/fonts/**/*'))
-    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
-});
 
 gulp.task('extras', () => {
   return gulp.src([
-    'app/*',
-    '!app/*.html'
+    'app/*',//match all files under the app folder
+    '!app/*.html'//do not match any files in the app folder that ends with an html extension
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
 });
 
 
-gulp.task('sass', ()=>{
+gulp.task('sass', () => {
   return gulp.src('app/styles/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('app/styles'))
@@ -107,7 +103,7 @@ gulp.task('sass', ()=>{
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
+  runSequence(['clean', 'wiredep'], ['styles', 'scripts'], () => {
     browserSync.init({
       notify: false,
       port: 9000, //displays on localhost 9000
@@ -125,6 +121,7 @@ gulp.task('serve', () => {
       'app/img/**/*',
       '.tmp/fonts/**/*'
     ]).on('change', reload);
+
 
     gulp.watch('app/styles/**/*.scss', ['sass']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
