@@ -1,16 +1,7 @@
 /**
  * Common database helper functions.
  */
-// import idb from 'idb';
-// // 
-
-// var dbPromise = idb.open('test-db', 1, function(){
-//   var keyValStore = upgradeDb.createObjectStore('keyval'); //creating the object store
-//   keyValStore.put('world', 'hello');  
-// });
-
-
-
+import idb from 'idb';
 
 class DBHelper {
 

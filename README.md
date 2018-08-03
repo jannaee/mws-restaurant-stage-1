@@ -12,7 +12,7 @@ You have been provided the code for a restaurant reviews website. The code has a
 
 ### What do I do from here?
 
-1. I am running the project from python version 3.6.5 using the integrated terminal within Visual Studio code. The command that works for me is `python -m http.server 8000`. My project is set up to port 8000 now, where it was previously set to 127.0.0.1:5500.
+1. I am running the project from python version 3.6.5 using the integrated terminal within Visual Studio code. The command that works for me is `python -m http.server 8000`. 
 
 2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
 3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
@@ -36,3 +36,9 @@ Steps to complete
 
 3. Cache the JSON responses for offline use by using the IndexedDB API.
 Follow the recommendations provided by Lighthouse to achieve the required performance targets.
+
+
+### How to Run Project
+1. Start Main presentation view on port 8000 with: python -m httpserver 8000
+2. Run Sails by opening terminal on the server folder with: node server
+3. Display Live reload of project on port 9000 by opening a node server in terminal from anywhere in project with: gulp serve
