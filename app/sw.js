@@ -9,8 +9,6 @@ const cachedFiles= [
   '/index.html',
   'restaurant.html',
   'styles/main.css',
-  'scripts/dbhelper.js',
-  'scripts/idb.js',
   'scripts/main.js',
   'scripts/restaurant_info.js',
   'img/1-sm.jpg',
@@ -32,7 +30,7 @@ self.addEventListener('install', function(event){
   event.waitUntil(
     caches.open(cacheName).then(
       function(cache){
-        console.log("[Step 2b. Caching files...]")
+        console.log('[Step 2b. Caching files...]')
       return cache.addAll(cachedFiles);
     })
   );

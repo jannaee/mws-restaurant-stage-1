@@ -2,8 +2,25 @@
  * Common database helper functions.
  */
 
-const dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
 
+
+ 
+/**
+ * Using Fetch API to fetch data
+ */
+fetch('http://localhost:1337/restaurants').then(function(response){//get the response from the url turn it into json
+return response.json(); 
+}).then(addData);
+
+function addData(data){//how we get data from the server
+  var allRestaurants = data;
+  console.log(allRestaurants);  
+
+
+/**
+ * Creating Database
+ */
+var dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
   switch (upgradeDb.oldVersion) {
     case 0: 
     var storeKey = upgradeDb.createObjectStore('RestaurantStore', {
@@ -17,15 +34,18 @@ const dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
 });
 
 //Create a transaction that pulls messages from server into database
-// dbPromise.then(function(db){
-//   var tx = db.transaction('RestaurantStore', 'readwrite');
-//   var storeKey = tx.objectStore('RestaurantStore');
-//   DBHelper.DATABASE_URL
-// })
+  dbPromise.then(function(db){
+    var tx = db.transaction('RestaurantStore', 'readwrite');
+    var storeKey = tx.objectStore('RestaurantStore');
+    allRestaurants.forEach(function(allRestaurant){
+      storeKey.put(allRestaurant);
+    });
+  });
+}
 
 
 class DBHelper {
- 
+
    /**
    * Database URL.
    * Change this to restaurants.json file location on your server.
@@ -34,6 +54,8 @@ class DBHelper {
     const port = 1337;
     return `http://localhost:${port}/restaurants`;
   }
+
+
 
   /**
    * Fetch all restaurants.
@@ -45,7 +67,6 @@ class DBHelper {
       if (xhr.status === 200) { 
         // Got a success response from server!
         const allData = JSON.parse(xhr.responseText);
-        console.log(allData);
         callback(null, allData);
       } else { 
         // Oops!. Got an error from server.
@@ -175,7 +196,7 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`./img/${restaurant.photograph}`);
+    return (`.img/${restaurant.photograph}`);
 
   }
 
@@ -194,4 +215,3 @@ class DBHelper {
   } 
   
 }
-
