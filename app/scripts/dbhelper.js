@@ -1,11 +1,32 @@
 /**
  * Common database helper functions.
  */
-import idb from 'idb';
+
+const dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
+
+  switch (upgradeDb.oldVersion) {
+    case 0: 
+    var storeKey = upgradeDb.createObjectStore('RestaurantStore', {
+      keyPath: 'id'//id is the primary key
+    }); 
+    storeKey.createIndex('Store-ids', 'id'); //('create Store Ids and index by id')
+    case 1: 
+    var keyValStore = upgradeDb.createObjectStore('keyval');
+    keyValStore.put('world', 'hello');
+  }//end of switch
+});
+
+//Create a transaction that pulls messages from server into database
+// dbPromise.then(function(db){
+//   var tx = db.transaction('RestaurantStore', 'readwrite');
+//   var storeKey = tx.objectStore('RestaurantStore');
+//   DBHelper.DATABASE_URL
+// })
+
 
 class DBHelper {
-
-  /**
+ 
+   /**
    * Database URL.
    * Change this to restaurants.json file location on your server.
    */
@@ -21,11 +42,13 @@ class DBHelper {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', DBHelper.DATABASE_URL);
     xhr.onload = () => {
-      if (xhr.status === 200) { // Got a success response from server!
-        // const json = JSON.parse(xhr.responseText);
-        const restaurants = JSON.parse(xhr.responseText);
-        callback(null, restaurants);
-      } else { // Oops!. Got an error from server.
+      if (xhr.status === 200) { 
+        // Got a success response from server!
+        const allData = JSON.parse(xhr.responseText);
+        console.log(allData);
+        callback(null, allData);
+      } else { 
+        // Oops!. Got an error from server.
         const error = (`Request failed. Returned status of ${xhr.status}`);
         callback(error, null);
       }
@@ -152,7 +175,7 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+    return (`./img/${restaurant.photograph}`);
 
   }
 
@@ -169,16 +192,6 @@ class DBHelper {
       marker.addTo(newMap);
     return marker;
   } 
-  /* static mapMarkerForRestaurant(restaurant, map) {
-    const marker = new google.maps.Marker({
-      position: restaurant.latlng,
-      title: restaurant.name,
-      url: DBHelper.urlForRestaurant(restaurant),
-      map: map,
-      animation: google.maps.Animation.DROP}
-    );
-    return marker;
-  } */
-
+  
 }
 
