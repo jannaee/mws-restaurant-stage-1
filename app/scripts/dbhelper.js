@@ -5,16 +5,7 @@
 
 
  
-/**
- * Using Fetch API to fetch data
- */
-fetch('http://localhost:1337/restaurants').then(function(response){//get the response from the url turn it into json
-return response.json(); 
-}).then(addData);
 
-function addData(data){//how we get data from the server
-  var allRestaurants = data;
-  console.log(allRestaurants);  
 
 
 /**
@@ -60,21 +51,20 @@ class DBHelper {
   /**
    * Fetch all restaurants.
    */
-  static fetchRestaurants(callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', DBHelper.DATABASE_URL);
-    xhr.onload = () => {
-      if (xhr.status === 200) { 
-        // Got a success response from server!
-        const allData = JSON.parse(xhr.responseText);
-        callback(null, allData);
-      } else { 
-        // Oops!. Got an error from server.
-        const error = (`Request failed. Returned status of ${xhr.status}`);
-        callback(error, null);
-      }
-    };
-    xhr.send();
+  static fetchRestaurants() {
+    fetch(DBHelper.DATABASE_URL)
+    .then(
+      function(response){//get the response from the url turn it into json
+      return response.json(); 
+    })
+    .then(
+      addData
+    );
+
+    function addData(data){//how we get data from the server
+      var allRestaurants = data;
+      console.log(allRestaurants);  
+    }
   }
 
   /**
