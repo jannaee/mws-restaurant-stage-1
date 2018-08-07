@@ -6,7 +6,7 @@
 const cacheName = 'v1';
 const cachedFiles= [
   '/',
-  '/index.html',
+  'index.html',
   'restaurant.html',
   'styles/main.css',
   'scripts/main.js',

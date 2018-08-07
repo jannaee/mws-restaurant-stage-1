@@ -2,39 +2,6 @@
  * Common database helper functions.
  */
 
-
-
- 
-
-
-
-/**
- * Creating Database
- */
-var dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
-  switch (upgradeDb.oldVersion) {
-    case 0: 
-    var storeKey = upgradeDb.createObjectStore('RestaurantStore', {
-      keyPath: 'id'//id is the primary key
-    }); 
-    storeKey.createIndex('Store-ids', 'id'); //('create Store Ids and index by id')
-    case 1: 
-    var keyValStore = upgradeDb.createObjectStore('keyval');
-    keyValStore.put('world', 'hello');
-  }//end of switch
-});
-
-//Create a transaction that pulls messages from server into database
-  dbPromise.then(function(db){
-    var tx = db.transaction('RestaurantStore', 'readwrite');
-    var storeKey = tx.objectStore('RestaurantStore');
-    allRestaurants.forEach(function(allRestaurant){
-      storeKey.put(allRestaurant);
-    });
-  });
-}
-
-
 class DBHelper {
 
    /**
@@ -51,20 +18,21 @@ class DBHelper {
   /**
    * Fetch all restaurants.
    */
-  static fetchRestaurants() {
-    fetch(DBHelper.DATABASE_URL)
-    .then(
-      function(response){//get the response from the url turn it into json
-      return response.json(); 
-    })
-    .then(
-      addData
-    );
-
-    function addData(data){//how we get data from the server
-      var allRestaurants = data;
-      console.log(allRestaurants);  
-    }
+  static fetchRestaurants(callback) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', DBHelper.DATABASE_URL);
+    xhr.onload = () => {
+      if (xhr.status === 200) { 
+        // Got a success response from server!
+        const allData = JSON.parse(xhr.responseText);
+        callback(null, allData);
+      } else { 
+        // Oops!. Got an error from server.
+        const error = (`Request failed. Returned status of ${xhr.status}`);
+        callback(error, null);
+      }
+    };
+    xhr.send();
   }
 
   /**
