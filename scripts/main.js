@@ -4,44 +4,7 @@ let restaurants,
 var newMap
 var markers = []
 
-/**
- * Using Fetch API to fetch data
- */
-fetch('http://localhost:1337/restaurants')
-  .then(function(response){//get the response from the url turn it into json
-    return response.json(); 
-}).then(addData);
 
-function addData(data){//how we get data from the server
-  var allRestaurants = data;
-  console.log(allRestaurants);  
-
-
-/**
- * Creating Database
- */
-var dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
-  switch (upgradeDb.oldVersion) {
-    case 0: 
-    var storeKey = upgradeDb.createObjectStore('RestaurantStore', {
-      keyPath: 'id'//id is the primary key
-    }); 
-    storeKey.createIndex('Store-ids', 'id'); //('create Store Ids and index by id')
-    case 1: 
-    var keyValStore = upgradeDb.createObjectStore('keyval');
-    keyValStore.put('world', 'hello');
-  }//end of switch
-});
-
-//Create a transaction that pulls messages from server into database
-  dbPromise.then(function(db){
-    var tx = db.transaction('RestaurantStore', 'readwrite');
-    var storeKey = tx.objectStore('RestaurantStore');
-    allRestaurants.forEach(function(allRestaurant){
-      storeKey.put(allRestaurant);
-    });
-  });
-}
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -128,18 +91,6 @@ initMap = () => {
   updateRestaurants();
 }
 
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
@@ -154,7 +105,7 @@ updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
-
+ 
   DBHelper.fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, (error, restaurants) => {
     if (error) { // Got an error!
       console.error(error);

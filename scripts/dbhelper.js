@@ -2,6 +2,14 @@
  * Common database helper functions.
  */
 
+
+ //TO DO: 
+ //Check to see if there is data being pulled from the server
+ //If there is data return it
+ //If there is no data cache it
+ //Then return it
+
+
 class DBHelper {
 
    /**
@@ -19,21 +27,47 @@ class DBHelper {
    * Fetch all restaurants.
    */
   static fetchRestaurants(callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', DBHelper.DATABASE_URL);
-    xhr.onload = () => {
-      if (xhr.status === 200) { 
-        // Got a success response from server!
-        const allData = JSON.parse(xhr.responseText);
-        callback(null, allData);
-      } else { 
-        // Oops!. Got an error from server.
-        const error = (`Request failed. Returned status of ${xhr.status}`);
-        callback(error, null);
-      }
-    };
-    xhr.send();
-  }
+    /**
+     * Using Fetch API to fetch data
+     */
+    fetch('http://localhost:1337/restaurants')
+    .then(
+      function(response){
+        return response.json();
+      })
+      .then(
+        
+        function addData(data){//how we get data from the server
+          console.log('A ok so far'+ data);
+          const dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
+            const storeKey = upgradeDb.createObjectStore('RestaurantStore', {keyPath: 'id'});
+            }); //End of opening database
+        
+          dbPromise.then(
+            function(db){//put the data into the db
+              var tx = db.transaction('RestaurantStore', 'readwrite');
+              var store = tx.objectStore('RestaurantStore');
+              data.forEach(datas=>{
+                var placedData = store.put(datas);
+                return placedData;
+              });
+          }).catch(
+            function(error){
+              console.log('Working offline...' + error)
+              dbPromise.then(function(db){//get the data from out of the store
+                var tx = db.transaction('RestaurantStore');
+                var cache = tx.objectStore('RestaurantStore');
+                return cache.getAll();
+              })
+          
+          })
+          callback(null, data)
+        })
+ 
+    
+  
+  }//end of fetchRestaurants
+
 
   /**
    * Fetch a restaurant by its ID.
