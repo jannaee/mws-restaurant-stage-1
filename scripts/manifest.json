@@ -14,8 +14,8 @@
       }
     ],
     "start_url": "/?jannaee-pwa-tracking",
-    "background_color": "#3397db",
+    "background_color": "#c5d7e4",
     "display": "standalone",
-    "scope": "/maps/",
-    "theme_color": "#3397db"
+    "scope": "/",
+    "theme_color": "#da3e52"
   }
