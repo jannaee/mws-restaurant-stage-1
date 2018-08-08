@@ -1,0 +1,21 @@
+{
+    "short_name": "MWS-RRA",
+    "name": "Restaurant Reviews App",
+    "icons": [
+      {
+        "src": "/img/RRA-App.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/img/RRA-App-big.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/?jannaee-pwa-tracking",
+    "background_color": "#3397db",
+    "display": "standalone",
+    "scope": "/maps/",
+    "theme_color": "#3397db"
+  }
