@@ -6,6 +6,7 @@
 const cacheName = 'v1';
 const cachedFiles= [
   '/',
+  'manifest.json',
   'index.html',
   'restaurant.html',
   'styles/main.css',

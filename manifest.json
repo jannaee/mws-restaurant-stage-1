@@ -16,6 +16,5 @@
     "start_url": "/?jannaee-pwa-tracking",
     "background_color": "#c5d7e4",
     "display": "standalone",
-    "scope": "/",
     "theme_color": "#da3e52"
   }
