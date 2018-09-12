@@ -26,7 +26,7 @@ This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://w
 
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
 
-
+---
 
 ## Project Overview Stage 2
 Steps to complete
@@ -42,3 +42,29 @@ Follow the recommendations provided by Lighthouse to achieve the required perfor
 1. Start Main presentation view on port 8000 with: python -m httpserver 8000
 2. Run Sails by opening terminal on the server folder with: node server
 3. Display Live reload of project on port 9000 by opening a node server in terminal from anywhere in project with: gulp serve
+
+---
+
+## Project Overview Stage 3
+clone up to date MWS directory
+
+###### Install project dependancies
+```Install project dependancies
+# npm i
+```
+###### Install Sails.js globally
+```Install sails global if it is not installed already
+# npm i sails -g
+```
+###### Start the server
+```Start server
+Go to /server directory and run
+# node server
+```
+### Access to your API server environment
+debug: Environment : development
+debug: Port        : 1337
+
+### Access to development server
+Go to root of folder and start up python -m http.server 8000
+
