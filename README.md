@@ -6,9 +6,8 @@ A project to reorient me developing in JavaScript and to train myself in becomin
 This is a three part Udacity course where I will incrementally convert a static webpage to a mobile-ready web application. 
 
 ### How to Run Project
-1. Fork and Clone this project
-```https://github.com/jannaee/mws-restaurant-stage-1.git
-```
+1. [Fork and Clone this project](https://github.com/jannaee/mws-restaurant-stage-1.git)
+
 2. Install/Update project dependancies
 ```Install project dependancies
 # npm i
