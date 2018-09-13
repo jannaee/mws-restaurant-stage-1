@@ -35,22 +35,6 @@ initMap = () => {
   });
 }  
  
-/* window.initMap = () => {
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      self.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: restaurant.latlng,
-        scrollwheel: false
-      });
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-    }
-  });
-} */
-
 /**
  * Get current restaurant from page URL.
  */
@@ -134,6 +118,16 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     const noReviews = document.createElement('p');
     noReviews.innerHTML = 'No reviews yet!';
     container.appendChild(noReviews);
+    const reviewForm = document.createElement('form');
+    reviewForm.innerHTML = `  First name: <input type="text" name="firstname" value="Mickey">
+    <br>
+    Last name: <input type="text" name="lastname" value="Mouse">
+    <br>
+    Comments: <textarea name="comment" form="usrform">Enter text here...</textarea>
+    <br>
+    <input type="submit" value="Submit">`;
+    container.appendChild(reviewForm);
+
     return;
   }
   const ul = document.getElementById('reviews-list');

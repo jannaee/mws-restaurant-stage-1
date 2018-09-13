@@ -235,8 +235,15 @@ section #favorites-icon {
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: flex-start;
-
 }
+
+#restaurants-list figure button a{
+  color: salmon;
+  font-weight: normal;
+  font-size: .85em;
+  line-height: 2.75em;
+}
+
 #restaurants-list figure {
   background-color: #fff;
   font-family: "Roboto","Helvetica",arial,sans-serif;

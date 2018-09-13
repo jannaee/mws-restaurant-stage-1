@@ -168,7 +168,7 @@ createRestaurantHTML = (restaurant) => {
  * Created alt tag.
  */
   const altTag = document.createAttribute('alt');
-  altTag.value = 'Featured images from restaurant';
+  altTag.value = `Featured images from ${restaurant.name} restaurant`; 
   image.setAttributeNode(altTag);
 
   const name = document.createElement('h2');
@@ -176,7 +176,7 @@ createRestaurantHTML = (restaurant) => {
  
 
   const more = document.createElement('button');
-  more.innerHTML = restaurant.name;
+  more.innerHTML = restaurant.name + '<br /> <a>view details</a>';
   more.onclick = function (){
     more.href = DBHelper.urlForRestaurant(restaurant);
     window.location = more.href;
