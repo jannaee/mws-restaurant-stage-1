@@ -1,70 +1,108 @@
 # Mobile Web Specialist Certification Course
 ---
-#### _Three Stage Course Material Project - Restaurant Reviews_
+## Purpose
+A project to reorient me developing in JavaScript and to train myself in becoming a developer specialized in Mobile Web Application development and best practices. 
 
-## Project Overview: Stage 1
-
-For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
-
-### Specification
-
-You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality. 
-
-### What do I do from here?
-
-1. I am running the project from python version 3.6.5 using the integrated terminal within Visual Studio code. The command that works for me is `python -m http.server 8000`. 
-
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
-
-## Leaflet.js and Mapbox:
-
-This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
-
-### Note about ES6
-
-Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
-
----
-
-## Project Overview Stage 2
-Steps to complete
-1. Fork and clone the server repository. Use the development server to develop your project code.
-
-2. Change the data source for your restaurant requests to pull JSON from the server, parse the response and use the response to generate the site UI.
-
-3. Cache the JSON responses for offline use by using the IndexedDB API.
-Follow the recommendations provided by Lighthouse to achieve the required performance targets.
-
+This is a three part Udacity course where I will incrementally convert a static webpage to a mobile-ready web application. 
 
 ### How to Run Project
-1. Start Main presentation view on port 8000 with: python -m httpserver 8000
-2. Run Sails by opening terminal on the server folder with: node server
-3. Display Live reload of project on port 9000 by opening a node server in terminal from anywhere in project with: gulp serve
-
----
-
-## Project Overview Stage 3
-clone up to date MWS directory
-
-###### Install project dependancies
+1. Fork and Clone this project
+```https://github.com/jannaee/mws-restaurant-stage-1.git
+```
+2. Install/Update project dependancies
 ```Install project dependancies
 # npm i
 ```
-###### Install Sails.js globally
+3. Install Sails.js globally
 ```Install sails global if it is not installed already
 # npm i sails -g
 ```
-###### Start the server
+4. Start the server
 ```Start server
 Go to /server directory and run
 # node server
 ```
-### Access to your API server environment
+5. To access API server environment
 debug: Environment : development
 debug: Port        : 1337
 
-### Access to development server
-Go to root of folder and start up python -m http.server 8000
+6. To Access development server
+```Install python, (I built this application using version 3.6.5)
+Go to root of project and run this in CLI
+# python -m httpserver 8000 or python -m http.server 8000
+```
 
+### Specifications about project
+* Python version 3.6.5
+* Sails version v0.12.14
+* Git 2.18.0.windows.1
+* Leaflet 1.3.4 - (an open-source JavaScript library for mobile-friendly interactive maps)
+> [leafletjs](https://leafletjs.com/)
+* Mapbox - a Live Location Platform
+> [Mapbox](https://www.mapbox.com/)
+* ES6
+> Most of the code is from the starter code written by Udacity's and according to ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as I can I will try to maintain use of ES6 in any additional JavaScript I write. 
+---
+
+#### _Restaurant Reviews - A Three Stage Course Material Project_
+
+## Project Overview: STAGE 1 CRITERIA
+
+### Responsive Design
+
+- [ ] Site UI compatible with a range of display sizes - Content should make use of available screen real estate and should display correctly at all screen sizes.
+- [ ] Image's associated title and text renders next to the image in all viewport sizes.
+- [ ] Images are responsive - Images in the site are sized appropriate to the viewport and do not crowd or overlap other elements in the browser, regardless of viewport size.
+- [ ] Application elements visible and usable in all viewports - On the main page, restaurants and images are displayed in all viewports. The detail page includes a map, hours and reviews in all viewports.
+
+### Accessibility
+
+- [ ] Images are accessible - All content-related images include appropriate alternate text that clearly describes the content of the image.
+- [ ] Focus used appropriately to allow easy navigation of the site - Focus is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus.
+- [ ] Site elements defined semantically - Elements on the page use the appropriate semantic elements. For those elements in which a semantic element is not available, appropriate ARIA roles are defined.
+
+### Offline Availability
+
+- [ ] Pages that have been visited available offline - When available in the browser, the site uses a service worker to cache responses to requests for site assets. Visited pages are rendered when there is no network access.
+---
+
+## Project Overview: STAGE 2 CRITERIA
+
+### Application Data and Offline Use
+
+- [ ] Application Data Source - The client application should pull restaurant data from the development server, parse the JSON response, and use the information to render the appropriate sections of the application UI.
+- [ ] Offline Use - The client application works offline. JSON responses are cached using the IndexedDB API. Any data previously accessed while connected is reachable while offline.
+
+### Responsive Design and Accessibility
+
+- [ ] Responsive Design - The application maintains a responsive design on mobile, tablet and desktop viewports.
+- [ ] Accessibility - The application retains accessibility features from the Stage 1 project. Images have alternate text, the application uses appropriate focus management for navigation, and semantic elements and ARIA attributes are used correctly.
+
+### Performance
+- [ ]  Site Performance - Lighthouse targets for each category exceed:
+    * Progressive Web App: >90
+    * Performance: >70
+    * Accessibility: >90
+---
+
+## Project Overview: STAGE 3 CRITERIA
+
+### User Interface
+
+- [ ] Users are able to mark a restaurant as a favorite, this toggle is visible in the application. A form is added to allow users to add their own reviews for a restaurant. Form submission works properly and adds a new review to the database.
+
+### Offline Use
+
+- [ ] The client application works offline. JSON responses are cached using the IndexedDB API. Any data previously accessed while connected is reachable while offline. User is able to add a review to a restaurant while offline and the review is sent to the server when connectivity is re-established.
+
+### Responsive Design and Accessibility
+
+- [ ] Responsive Design - The application maintains a responsive design on mobile, tablet and desktop viewports. All new features are responsive, including the form to add a review and the control for marking a restaurant as a favorite.
+
+- [ ] Accessibility - The application retains accessibility features from the previous projects. Images have alternate text, the application uses appropriate focus management for navigation, and semantic elements and ARIA attributes are used correctly. Roles are correctly defined for all elements of the review form.
+
+### Performance
+- [ ]  Site Performance - Lighthouse targets for each category exceed:
+    * Progressive Web App: >90
+    * Performance: >90
+    * Accessibility: >90
