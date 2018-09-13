@@ -168,12 +168,20 @@ createRestaurantHTML = (restaurant) => {
  * Created alt tag.
  */
   const altTag = document.createAttribute('alt');
-  altTag.value = "Featured images from restaurant";
+  altTag.value = 'Featured images from restaurant';
   image.setAttributeNode(altTag);
 
   const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
-  li.append(name);
+ 
+
+  const more = document.createElement('button');
+  more.innerHTML = restaurant.name;
+  more.onclick = function (){
+    more.href = DBHelper.urlForRestaurant(restaurant);
+    window.location = more.href;
+  }
+  li.append(more)
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
@@ -182,14 +190,8 @@ createRestaurantHTML = (restaurant) => {
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
   li.append(address);
-
-  const more = document.createElement('button');
-  more.innerHTML = 'View Details';
-  more.onclick = function (){
-    more.href = DBHelper.urlForRestaurant(restaurant);
-    window.location = more.href;
-  }
-  li.append(more)
+ // li.append(name);
+ 
   return li
 }
 
@@ -200,7 +202,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
-    marker.on("click", onClick);
+    marker.on('click', onClick);
     function onClick() {
       window.location.href = marker.options.url;
     }
@@ -214,7 +216,7 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker
   .register('sw.js', {scope: '/'})
   .then(function(event) {
-    console.log("[Step 1. Service Worker from main.js] Registered", event.scope);
+    console.log('[Step 1. Service Worker from main.js] Registered', event.scope);
     })
   .catch(function(error){
     console.log('[Step 1. Service Worker from main.js] Error on Registration', error);

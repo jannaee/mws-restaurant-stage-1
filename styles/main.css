@@ -162,7 +162,33 @@ nav h1 a {
   background: #fff;
   border: 1px solid #ccc;
 }
+/* ====================== Favorites Feature ====================== */
+button#favorites-icon .fa-heart {
+  color: #0275d8;
+  font-size: 18px;
+  border-radius: 30px 30px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, .3);
+  padding: 12px;
+  z-index: 1000;
+  background-color: white;
+  margin-right: 5%;
+}
 
+button#favorites-icon ::after {
+  color: #0275d8;
+}
+
+button#favorites-icon .fa-heart:hover {
+  color: white;
+  background-color: #0275d8;
+}
+ 
+section #favorites-icon {
+  position: relative;
+  top: -7vh;
+  /* left: 17vw; */
+  text-align: right;
+}
 
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
@@ -175,7 +201,7 @@ nav h1 a {
 
 .filter-options select {
   background-color: #E6EBE0;
-  font-family: "Roboto","Helvetica",arial,sans-serif;
+  font-family: "Roboto","Helvetica", arial, sans-serif;
   font-size: 14px;
   height: 40px;
   letter-spacing: 0;
@@ -185,19 +211,21 @@ nav h1 a {
   color: #666;
   font-weight: 500;
 }
-.content h2{
+
+.content h2 {
   color: #105489;
   padding: 28px 10px 0 10px;
-  font-size: 22px;
+  font-size: 1em;
   font-weight: 500;
 }
-.filterSelect{
+
+.filterSelect {
   background-color:  #105489;
   height: 160px;
   margin: 0 0 30px 0;
 }
 
-.filterSelect h2{
+.filterSelect h2 {
   color: #E6EBE0;
 }
 
@@ -212,13 +240,23 @@ nav h1 a {
 #restaurants-list figure {
   background-color: #fff;
   font-family: "Roboto","Helvetica",arial,sans-serif;
-  border: 2px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin: 30px 12px;
   padding: 0 0 0 0;
   text-align: center;
-  width: 30vh;
-  height: 420px;
+  width: 20vw;
+  height: 30vh;
+  transition: box-shadow .3s cubic-bezier(.25,.8,.25,1);
+
 }
+
+#restaurants-list figure:hover{
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.06), 0 4px 16px 0 rgba(0,0,0,.12);
+  outline: 0;
+  z-index: 2;
+}
+
+
 #restaurants-list .restaurant-img {
   max-width: 100%;
 }
@@ -234,7 +272,8 @@ nav h1 a {
 }
 #restaurants-list p {
   margin: 0;
-  font-size: 1em;
+  font-size: .75em;
+  padding: 0 20px
 }
 button, input[type="submit"], input[type="reset"] {
   background: none;
@@ -246,22 +285,20 @@ button, input[type="submit"], input[type="reset"] {
   outline: inherit;
 }
 
-button{
-  display: inline-block;
-  color: #B01232;
-  text-align: center;
-  padding-top: 10px;
+#restaurants-list button {
+  padding: 7px;
   width: 100%;
-  transition: all 0.5s;
+  height: 20%;
   cursor: pointer;
-  text-transform: lowercase;
-  font-weight: 400;
+  line-height: 19px;
+  color: #0275d8;
+  font-weight: bold;
 }
-
+/* 
 button::after{
   content: " \1f87a";
   font-size: 10px;
-  }
+  } */
 
   button:hover{
     text-decoration: underline;
