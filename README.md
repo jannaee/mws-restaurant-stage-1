@@ -1,8 +1,6 @@
 # Mobile Web Specialist Certification Course
 ---
 ## Purpose
-An exercise project that I used to become reoriented in developing websites in JavaScript as well as training myself to become specialized Mobile Web Application development. 
-
 This is a three part Udacity course where I will incrementally convert a static webpage to a mobile-ready web application. 
 
 ### How to Run Project
