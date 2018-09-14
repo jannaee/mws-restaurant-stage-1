@@ -1,4 +1,5 @@
 /* CSS Document */
+
 * {
   box-sizing: border-box;
 }
@@ -13,6 +14,10 @@ body, html {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
+  overflow-x: hidden;
+  font-family: 'Raleway', sans-serif; /* I have access to font weights 300, 400, 800 */
+
+
 }
 
 
@@ -22,14 +27,14 @@ Img, embed, object, video {
 
 body, td, th, p {
   color: #666;
-  font-family: "proxima-nova-soft","Helvetica",arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 1em;
   line-height: 24px;
 
 }
 
 ul, li {
-  font-family: "proxima-nova-soft","Helvetica",arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 1em;
   color: #333;
 }
@@ -63,7 +68,6 @@ a img{
 h2{
     color: #011638;
     font-size: 24px;
-    font-weight: 300;
     letter-spacing: -1px;
     padding-bottom: 1px;
     margin-top: 70px;
@@ -72,9 +76,11 @@ h2{
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "proxima-nova-soft","Helvetica",arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0 0 20px;
+  font-weight: 800;
 }
+
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -90,14 +96,13 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   color: white;
   text-align: center;
   width: 100%;
-  margin-top: 11vh;
+  /* margin-top: 11vh; */
   padding-top: 29px;
   text-transform: uppercase;
   font-size: .80em;
 }
 footer a {
   color: #ffffff;
-  font-weight: 900;
   text-decoration: underline;
 }
 
@@ -119,8 +124,6 @@ nav {
 }
 nav h1 {
     color: #ffffff;
-    font-size: 1em;
-    font-weight: bolder;
     letter-spacing: 10px;
     text-transform: uppercase;
     padding: 90px 5%;
@@ -133,7 +136,6 @@ nav h1 {
 nav h1 a {
   color: #ffffff;
   font-size: 1em;
-  font-weight: 500;
   letter-spacing: 10px;
   text-transform: uppercase;
   padding-left: 5%;
@@ -199,7 +201,7 @@ nav h1 a {
 }
 
 .loved {
-  color: #011638;
+  color: #ff5252;
 }
 /* ====================== Submit a Review form ====================== */
 .reviewBox {
@@ -232,12 +234,12 @@ textarea {
     height: 40px;
     width: 85px;
     border-radius: 3px 3px;
-    background-color: #011638;
+    background-color: #ff5252;;
     color: #ffffff;
 }
 
 .submitButton:hover {
-  background-color: green;
+  background-color: #ff5252;
 }
 
 .cancelButton {
@@ -267,22 +269,21 @@ textarea {
 }
 
 .filter-options select {
-  font-family: "proxima-nova-soft","Helvetica", arial, sans-serif;
-  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  font-size: .9em;
   height: 40px;
   letter-spacing: 0;
   margin: -9px 15px 0 16px;
   padding: 0 10px;
-  color: #666;
-  font-weight: 500;
+  color: #000000;
   border-radius: 3px 3px;
+  border: 1px solid #011638;
+
 }
 
 .content h2 {
   color: #011638;
-  padding: 28px 10px 0 10px;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 0 10px 0 10px;
 }
 
 .filterSelect {
@@ -303,16 +304,14 @@ textarea {
 }
 
 #restaurants-list figure button a{
-  
-  font-weight: bold;
   font-size: .85em;
-  line-height: 2.75em;
+  line-height: 17.75em;
 }
 
 #restaurants-list figure {
   background-color: #fff;
-  font-family: "proxima-nova-soft","Helvetica",arial,sans-serif;
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  font-family: 'Raleway', sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin: 4% 0;
   padding-bottom: 2%;
   text-align: left;
@@ -340,9 +339,8 @@ textarea {
 
 #restaurants-list li h1 {
   color: #B01232;
-  font-family: "proxima-nova-soft","Helvetica",arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 14px;
-  font-weight: 200;
   letter-spacing: 0;
   line-height: 1.3;
   margin: 20px 0 10px;
@@ -355,8 +353,9 @@ textarea {
   line-height: 1.25em;
   text-align: center;
   position: relative;
-  top: -65px;
+  top: -22px;
   padding: 0 16px;  
+  font-size: .9em;
 }
 
 button, input[type="submit"], input[type="reset"] {
@@ -374,14 +373,14 @@ button, input[type="submit"], input[type="reset"] {
   width: 100%;
   cursor: pointer;
   line-height: 0;
-  font-weight: bold;
   text-align: center;
   position: relative;
-  top: -200px;
-  background-color: rgba(0, 0, 0, 0.6 );
+  top: -30px;
+  background-color: rgba(255, 82, 82, 1);
   height: 1vw;
-  padding: 2.2em 1em;
+  padding: 2.75em 1em;
   font-size: 1em;
+  font-weight: 400;
 }
 /* 
 button::after{
@@ -418,8 +417,7 @@ section.sectionHeadDivider{
  }
 
 #restaurant-address {
-  font-size: 1em;
-  margin: 10px 0px -42px 0;
+  font-weight: 800;
   text-align: center;
 }
 
@@ -427,7 +425,7 @@ section.sectionHeadDivider{
   color: #333333;
   font-size: 12px;
   letter-spacing: 10px;
-  margin: 0 0 10px;
+  margin: 20% 0 10px;
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
@@ -436,17 +434,19 @@ section.sectionHeadDivider{
 
 #restaurant-container{
   border-top: 1px solid #fff;
-  padding-left: 45px;
+  /* padding-left: 45px; */
 }
 
 details{
   font-size: 12px;
 }
+
 .inside #maincontent{ 
   display: flex; 
   flex-direction: row; 
   justify-content: center;
   /* border: 1px solid #ccc; */
+  padding-bottom: 60px;
 }
 
 .inside #map-container{
@@ -457,6 +457,9 @@ details{
 
 #reviews-container {
   width: 100%;
+  height: auto;
+  padding: 0 0 75px 0;
+  background-color: #EDFFFC;
 }
 
 #reviews-container p {
@@ -479,7 +482,6 @@ ul#reviews-list li:nth-child(even):before  {
 #reviews-container h2 {
   color: #011638;
   font-size: 24px;
-  font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1px;
   margin-top: 70px;
@@ -538,6 +540,10 @@ ul#reviews-list li:nth-child(even):before  {
     width: 90%;
   }
 
+  #restaurant-cuisine {
+   margin: 5% 0 10px;
+  }
+
   #restaurant-container {
     padding: 0;
   }
@@ -550,8 +556,7 @@ ul#reviews-list li:nth-child(even):before  {
   .inside #restaurant-hours td {
     width: 40vw;
     margin: 0 auto;
-    font-size: 1em;
-    padding-right: 5%;
+    padding: 3% 1%;
   }
 
   #restaurant-hours tr:nth-child(odd){
@@ -569,7 +574,10 @@ ul#reviews-list li:nth-child(even):before  {
     #restaurant-hours td:first-child { text-align: center; }
   .inside #restaurant-hours, #restaurant-address {
     margin-bottom: 30px;
+    
   }
+
+ 
 } 
 
 
@@ -607,17 +615,21 @@ ul#reviews-list li:nth-child(even):before  {
 }
   
    table#restaurant-hours tr {
-    padding: 20px 0;
-    font-size: .90em;
-
+    padding: 20px 6%;
   }
+
+  #restaurant-cuisine {
+    margin: 25% 0 10px;
+   }
+
+   
+
   .inside #map-container, .inside #map{
     margin-bottom: 50px;
     padding-top: 0;
   }
   nav {
     margin-top: 0;
-    padding: 50px 0 0 0;
   }
 
   #restaurant-container { border-bottom: none;}
