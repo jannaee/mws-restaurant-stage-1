@@ -118,16 +118,17 @@ nav {
   margin-top: 50px;
 }
 nav h1 {
-  color: snow;
+    color: #ffffff;
     font-size: 1em;
     font-weight: bolder;
     letter-spacing: 10px;
     text-transform: uppercase;
-    padding: 90px 0 50px 0;
+    padding: 90px 0 50px 5%;
     height: 117px;
     margin-top: -117px;
     width: 100vw;
     background-color: #011638;
+    text-align: left;
 }
 
 nav h1 a {
@@ -177,6 +178,7 @@ nav h1 a {
   background: #fff;
   border: 1px solid #ccc;
 }
+
 /* ====================== Favorites Feature ====================== */
 
 .fa-heart {
@@ -191,9 +193,10 @@ nav h1 a {
   height: 48px;
   font-size: 19px;
   position: relative;
-  top: -155px;
+  top: -65px;
   z-index: 1000;
   background: white;
+  left: 10px;
 }
 
 .loved {
@@ -332,6 +335,9 @@ textarea {
 }
 
 #restaurant-img {
+  width: 60vw;
+  padding: 12px;
+  border: 1px solid;
   margin: -2px 0;
 }
 #restaurants-list li h1 {
@@ -394,11 +400,12 @@ button::after{
 } */
 
 /* ====================== Restaurant Details ====================== */
-.leftColumn{
+.leftColumn {
   display: flex;
-    flex-direction: column;
-    width: 55%;
+  flex-direction: column;
+  width: 55%;
 }
+
 .inside-child h1 a {
 background-color: #B01232;
 }
@@ -406,19 +413,23 @@ background-color: #B01232;
 .inside #map {
   background-color: #ccc;
   width: 25vw;
+  height: 25vh;
 }
+section.sectionHeadDivider{
+  margin: 60px 0 60px 0;
+ }
 
 #restaurant-address {
-  font-size: 20px;
+  font-size: 1em;
   margin: 10px 0px -42px 0;
+  text-align: center;
 }
+
 #restaurant-cuisine {
-  background-color: #333;
-  color: #ddd;
+  color: #333333;
   font-size: 12px;
-  font-weight: 300;
   letter-spacing: 10px;
-  margin: 0;
+  margin: 0 0 10px;
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
@@ -497,7 +508,7 @@ ul#reviews-list li:nth-child(even):before  {
   border-collapse: collapse;
   width: 25vw;
   padding-bottom: 50px;
-  margin: 0 auto;
+  margin:  auto;
 }
 
 #restaurant-hours td:first-child {text-align: center;}
@@ -505,6 +516,11 @@ ul#reviews-list li:nth-child(even):before  {
 
 /*Media query for files */
 @media (max-width: 1000px){
+  .heartHalo {
+    top: -137px;
+    left: 21px;
+   }
+
   #restaurants-list figure {
    width: 40vw;
   }
@@ -517,7 +533,7 @@ ul#reviews-list li:nth-child(even):before  {
   .inside #maincontent, .inside #reviews-list, .inside #restaurant-container, .inside #restaurant-hours {
     display: flex;
     flex-direction: column;  
-    width: 100%;  
+    width: 90%;
   }
 
   #restaurant-container {
@@ -607,12 +623,15 @@ ul#reviews-list li:nth-child(even):before  {
   }
 
   .heartHalo {
-    position: relative;
-    top: -281px;
-    z-index: 1000;
-    background: white;
-    
+    top: -156px;
+    left: 7px;
+    border-radius: 20px 20px;
+    padding: 9px;
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
   }
+
   #footer {
     margin-bottom: 50px;
   }

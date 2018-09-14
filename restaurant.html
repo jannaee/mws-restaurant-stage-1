@@ -39,21 +39,20 @@
 
      <main id="maincontent">
        <div class ="leftcolumn" >
-        <h2 id="restaurant-cuisine"></h2>
-        <h2 id="restaurant-name"></h2>
-        <!-- Location -->
-        <p id="restaurant-address"></p>
-        <!-- Hours -->
-        <h2>Business Hours</h2> 
-        <table id="restaurant-hours"></table>
-        <section id="map-container" aria-label="Map by Mapbox">
-            <div role="application" id="map"></div>
-        </section>  
-        <section>
-            <button class="heartHalo" onclick="toggleFavs()"><i id="favorites-icon" class="fas fa-heart"></i></button>
+          <h2 id="restaurant-cuisine"></h2>
+          <h2 id="restaurant-name"></h2>
+          <!-- Location -->
+          <p id="restaurant-address"></p>
+          <!-- <button class="heartHalo" onclick="toggleFavs()"><i id="favorites-icon" class="fas fa-heart"></i></button> -->
 
-          
-        </section>     
+          <!-- Hours -->
+          <section class="sectionHeadDivider">
+          <table id="restaurant-hours"></table>
+        </section>
+          <!-- Location -->
+          <section id="map-container" aria-label="Map by Mapbox">
+              <div role="application" id="map"></div>
+          </section>  
       </div>
         <section id="restaurant-container">
           <img id="restaurant-img" alt="restaurant"/>  
@@ -62,6 +61,7 @@
       
 
     </main>
+
     <section id="reviews-container">
         <ul id="reviews-list"></ul>
     </section>    
