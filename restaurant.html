@@ -38,34 +38,29 @@
 
 
      <main id="maincontent">
-       <div style="display: flex; flex-direction: column;">
+       <div class ="leftcolumn" >
         <h2 id="restaurant-cuisine"></h2>
         <h2 id="restaurant-name"></h2>
-        <p id="restaurant-address"></p>
-      </div>
-      <section id="restaurant-container">
-        <img id="restaurant-img" alt="restaurant"/>  
-
-      <div>
         <!-- Location -->
-
-
-        <!-- Favorites Feature -->
-        <button class="heartHalo" onclick="toggleFavs()"><i id="favorites-icon" class="fas fa-heart"></i></button>
-      </div>
-
-
-      <div>
+        <p id="restaurant-address"></p>
         <!-- Hours -->
         <h2>Business Hours</h2> 
         <table id="restaurant-hours"></table>
-      <div>
+        <section id="map-container" aria-label="Map by Mapbox">
+            <div role="application" id="map"></div>
+        </section>  
+        <section>
+            <button class="heartHalo" onclick="toggleFavs()"><i id="favorites-icon" class="fas fa-heart"></i></button>
+
+          
+        </section>     
+      </div>
+        <section id="restaurant-container">
+          <img id="restaurant-img" alt="restaurant"/>  
       </section>
       <!-- end of restaurant container -->
       
-      <section id="map-container" aria-label="Map by Mapbox">
-          <div role="application" id="map"></div>
-      </section>
+
     </main>
     <section id="reviews-container">
         <ul id="reviews-list"></ul>

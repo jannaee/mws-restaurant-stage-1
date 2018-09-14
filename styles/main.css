@@ -394,13 +394,18 @@ button::after{
 } */
 
 /* ====================== Restaurant Details ====================== */
+.leftColumn{
+  display: flex;
+    flex-direction: column;
+    width: 55%;
+}
 .inside-child h1 a {
 background-color: #B01232;
 }
 
 .inside #map {
   background-color: #ccc;
-  height: 100vh;
+  width: 25vw;
 }
 
 #restaurant-address {
@@ -421,10 +426,8 @@ background-color: #B01232;
 }
 
 #restaurant-container{
-  
   border-top: 1px solid #fff;
-  padding: 0 40px 0 40px;
-  width: 100%;
+  padding-left: 45px;
 }
 
 details{
