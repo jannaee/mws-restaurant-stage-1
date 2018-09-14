@@ -73,6 +73,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #ffffff;
 }
 section {
+  padding-top: 4em;
   text-align: center;
 }
 
@@ -176,10 +177,9 @@ nav h1 a {
   height: 48px;
   font-size: 19px;
   position: relative;
-    top: -47px;
-    z-index: 1000;
-    background: white;
-    left: 24px;
+  top: -155px;
+  z-index: 1000;
+  background: white;
 }
 
 .loved {
@@ -189,7 +189,8 @@ nav h1 a {
 .reviewBox {
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 40vw;
+  margin: 0 auto;
 }
 
 .reviewBoxItem {
@@ -376,13 +377,13 @@ background-color: #B01232;
   font-size: 1.75em;
   font-weight: 200;
   letter-spacing: 0;
-  margin: 55px 0 0;
+  margin: -25px 0 0;
   text-transform: uppercase;
   line-height: 1.1;
 }
 #restaurant-img {
   max-width: 100%;
-  margin: 20px 0;
+  margin: -2px 0;
 }
 #restaurant-address {
   font-size: 20px;
@@ -470,14 +471,13 @@ ul#reviews-list li:nth-child(even):before  {
 }
 #restaurant-hours {
   border-collapse: collapse;
-  width: 100%;
+  width: 25vw;
   padding-bottom: 50px;
-  
+  margin: 0 auto;
 }
 
-#restaurant-hours tr:nth-child(odd){
-  background-color: #f3f3f3;
-}
+#restaurant-hours td:first-child {text-align: center;}
+#restaurant-hours td:nth-child(2n){text-align: center;}
 
 /*Media query for files */
 @media (max-width: 1000px){
@@ -502,11 +502,40 @@ ul#reviews-list li:nth-child(even):before  {
     height: 450px;
   }
   .inside #restaurant-hours td {
-    text-align: center;
-    border-collapse: collapse;
-    width: 65%;
+    width: 40vw;
+    margin: 0 auto;
+    font-size: 1em;
+    padding-right: 5%;
   }
+
+  #restaurant-hours tr:nth-child(odd){
+  background-color: #f3f3f3;
+  }
+  
+  .reviewBox{
+    width: 75vw;
+  }
+  
+  #restaurant-name {
+    font-size: 1.25em;
+  }
+
+    #restaurant-hours td:first-child { text-align: center; }
   .inside #restaurant-hours, #restaurant-address {
     margin-bottom: 30px;
   }
 } 
+
+@media (max-width: 400px){
+  body{
+    background-color: black;
+    padding: 0;
+  }
+
+  .heartHalo {
+    position: relative;
+    top: -178px;
+    z-index: 1000;
+    background: white;
+  }
+}

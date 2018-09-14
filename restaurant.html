@@ -32,20 +32,23 @@
         <ul id="breadcrumb" role="navigation" aria-label="breadcrumb">
           <li><a href="/" aria-label="Restaurant Reviews" aria-current="page">Home</a></li>
         </ul>
-        <h2 id="restaurant-cuisine"></h2>
+        <h2 id="restaurant-cuisine">
+
+          
+        </h2>
       </nav>
      </header>
      <main id="maincontent">
       <section id="restaurant-container">
-        <p id="restaurant-name"></p>
         <img id="restaurant-img" alt="image of restaurant" />  
-        <!-- Favorites Feature -->
-        <button class="heartHalo" onclick="toggleFavs()">
-            <i id="favorites-icon" class="fas fa-heart animated rubberBand"></i>
-        </button>
-        
-        <h4>Address</h4>
-        <p id="restaurant-address"></p>
+          <section>
+            <p id="restaurant-name"></p>
+            <p id="restaurant-address"></p>
+            <!-- Favorites Feature -->
+            <button class="heartHalo" onclick="toggleFavs()">
+                <i id="favorites-icon" class="fas fa-heart"></i>
+            </button>
+          </section>
         <table id="restaurant-hours"></table>
       </section>
       <section id="map-container" aria-label="Map by Mapbox">
