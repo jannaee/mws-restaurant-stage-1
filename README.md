@@ -84,7 +84,9 @@ Go to root of project and run this in CLI
 
 ### User Interface
 
-- [ ] Users are able to mark a restaurant as a favorite, this toggle is visible in the application. A form is added to allow users to add their own reviews for a restaurant. Form submission works properly and adds a new review to the database.
+- [x] Users are able to mark a restaurant as a favorite, this toggle is visible in the application. 
+- [x] A form is added to allow users to add their own reviews for a restaurant. 
+- [ ] Form submission works properly and adds a new review to the database.
 
 ### Offline Use
 
