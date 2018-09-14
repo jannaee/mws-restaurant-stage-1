@@ -40,17 +40,26 @@
      </header>
      <main id="maincontent">
       <section id="restaurant-container">
-        <img id="restaurant-img" alt="image of restaurant" />  
-          <section>
-            <p id="restaurant-name"></p>
-            <p id="restaurant-address"></p>
-            <!-- Favorites Feature -->
-            <button class="heartHalo" onclick="toggleFavs()">
-                <i id="favorites-icon" class="fas fa-heart"></i>
-            </button>
-          </section>
+        <img id="restaurant-img" alt="image of restaurant"/>  
+
+      <div>
+        <!-- Location -->
+        <h2 id="restaurant-name"></h2>
+        <p id="restaurant-address"></p>
+
+        <!-- Favorites Feature -->
+        <button class="heartHalo" onclick="toggleFavs()"><i id="favorites-icon" class="fas fa-heart"></i></button>
+      </div>
+
+
+      <div>
+        <!-- Hours -->
+        <h2>Business Hours</h2> 
         <table id="restaurant-hours"></table>
+      <div>
       </section>
+      <!-- end of restaurant container -->
+      
       <section id="map-container" aria-label="Map by Mapbox">
           <div role="application" id="map"></div>
       </section>
@@ -67,8 +76,7 @@
 
     <script type="application/javascript" charset="utf-8" src="../sw.js"></script>
     <footer id="footer">
-        Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-        <details>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></details>
+        Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a>
     </footer>
 
   </body>

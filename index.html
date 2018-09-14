@@ -32,21 +32,34 @@
         <h1><a href="/" aria-label="Restaurant Reviews">Restaurant Reviews</a></h1>
       </nav>
     </header>
-    
+
     <main id="maincontent" class="wrapper">
-      <section tabindex="-1"  id="map-container">
-        <div tabindex="-1" id="map"></div>
-      </section>
+
       <section class="content filter-options">
         <div class="filterSelect" role="main">
+
+        <span style="display: inline-block;">
           <h2 id="find_a_restaurant">Find a Restaurant</h2>
-          <select role="listbox" aria-labelledby="find_a_restaurant" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-            <option value="all">All Neighborhoods</option>
+        </span>
+
+        <span style="display: inline-block;">
+            <select role="listbox" aria-labelledby="find_a_restaurant" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+            <option value="all">Neighborhoods</option>
           </select>
-          <select role="listbox" aria-labelledby="find_a_restaurant" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-            <option value="all">All Cuisines</option>
+        </span>
+        <span style="display: inline-block;">
+            <select role="listbox" aria-labelledby="find_a_restaurant" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+            <option value="all">Cuisines</option>
           </select>
+        </span>
+        
         </div>
+        
+
+        <section tabindex="-1"  id="map-container">
+            <div tabindex="-1" id="map"></div>
+          </section>
+
         <section id="restaurants-list"></section>
       </section>
     </main>
