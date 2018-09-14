@@ -35,14 +35,14 @@ ul, li {
 }
 
 a {
-  color: #01A7C2;
+  color: #011638;
   text-decoration: none;
 }
 
 a:hover, a:focus {
   color: #3397db;
   text-decoration: none;
-}1
+}
 
 a img{
   border: none 0px #fff;
@@ -115,7 +115,7 @@ nav {
   width: 100%;
   background-color: #ffffff;
   text-align:center;
-  margin-top: 50px;
+  margin-top: 50px 0 75px 0;
 }
 nav h1 {
     color: #ffffff;
@@ -123,12 +123,11 @@ nav h1 {
     font-weight: bolder;
     letter-spacing: 10px;
     text-transform: uppercase;
-    padding: 90px 0 50px 5%;
-    height: 117px;
-    margin-top: -117px;
+    padding: 90px 5%;
+    margin-top: 0;
     width: 100vw;
     background-color: #011638;
-    text-align: left;
+    text-align: center;
 }
 
 nav h1 a {
@@ -193,14 +192,14 @@ nav h1 a {
   height: 48px;
   font-size: 19px;
   position: relative;
-  top: -65px;
+  top: 92px;
   z-index: 1000;
   background: white;
-  left: 10px;
+  left: 110px;
 }
 
 .loved {
-  color: #01A7C2;
+  color: #011638;
 }
 /* ====================== Submit a Review form ====================== */
 .reviewBox {
@@ -214,7 +213,7 @@ nav h1 a {
   font-size: .9em;
   color: #000000;
   margin-top: 10px;
-  border: 1px solid #01A7C2;
+  border: 1px solid #011638;
   border-radius: 3px 3px;
   padding: 15px;
 }
@@ -233,7 +232,7 @@ textarea {
     height: 40px;
     width: 85px;
     border-radius: 3px 3px;
-    background-color: #01A7C2;
+    background-color: #011638;
     color: #ffffff;
 }
 
@@ -335,11 +334,10 @@ textarea {
 }
 
 #restaurant-img {
-  width: 60vw;
-  padding: 12px;
-  border: 1px solid;
-  margin: -2px 0;
+  width: 50vw;
+  margin: 75px 0 0 0;
 }
+
 #restaurants-list li h1 {
   color: #B01232;
   font-family: "proxima-nova-soft","Helvetica",arial,sans-serif;
@@ -461,6 +459,10 @@ details{
   width: 100%;
 }
 
+#reviews-container p {
+  text-align: center;
+}
+
 #reviews-container ul li{
   padding: 30px 40px 80px;
   margin: 25px;
@@ -511,14 +513,14 @@ ul#reviews-list li:nth-child(even):before  {
   margin:  auto;
 }
 
-#restaurant-hours td:first-child {text-align: center;}
+#restaurant-hours td:first-child {text-align: left;}
 #restaurant-hours td:nth-child(2n){text-align: center;}
 
 /*Media query for files */
 @media (max-width: 1000px){
   .heartHalo {
-    top: -137px;
-    left: 21px;
+    top: 60px;
+    left: 50px;
    }
 
   #restaurants-list figure {
@@ -542,7 +544,9 @@ ul#reviews-list li:nth-child(even):before  {
   .inside #map-container,.inside #map{
     width: 100%;
     height: 450px;
+    margin: 0 0 90px;
   }
+
   .inside #restaurant-hours td {
     width: 40vw;
     margin: 0 auto;
@@ -558,10 +562,10 @@ ul#reviews-list li:nth-child(even):before  {
     width: 75vw;
   }
   
-  /* #restaurant-name {
-    font-size: 1.25em;
-  } */
-
+#restaurant-img {
+    width: 100vw;
+    margin: -2px 5%;
+}
     #restaurant-hours td:first-child { text-align: center; }
   .inside #restaurant-hours, #restaurant-address {
     margin-bottom: 30px;
@@ -584,7 +588,7 @@ ul#reviews-list li:nth-child(even):before  {
     width: 90%;
     margin: 10px 0;
     text-align: center;
-    border: 1px solid #01A7C2;
+    border: 1px solid #011638;
 }
 
 
@@ -623,8 +627,8 @@ ul#reviews-list li:nth-child(even):before  {
   }
 
   .heartHalo {
-    top: -156px;
-    left: 7px;
+    top: 23px;
+    left: 0;
     border-radius: 20px 20px;
     padding: 9px;
     width: 38px;

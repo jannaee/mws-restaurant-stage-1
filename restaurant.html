@@ -29,21 +29,18 @@
     <header>
       <nav>
         <h1>Restaurant Reviews</h1>
-        <ul id="breadcrumb" role="navigation" aria-label="breadcrumb">
-          <li><a href="/" aria-label="Restaurant Reviews" aria-current="page">Home</a></li>
-
-        </ul>
       </nav>
      </header>
 
 
      <main id="maincontent">
-       <div class ="leftcolumn" >
+       <div class ="leftcolumn">
           <h2 id="restaurant-cuisine"></h2>
+
           <h2 id="restaurant-name"></h2>
+
           <!-- Location -->
           <p id="restaurant-address"></p>
-          <!-- <button class="heartHalo" onclick="toggleFavs()"><i id="favorites-icon" class="fas fa-heart"></i></button> -->
 
           <!-- Hours -->
           <section class="sectionHeadDivider">
@@ -54,8 +51,13 @@
               <div role="application" id="map"></div>
           </section>  
       </div>
+      <button class="heartHalo" onclick="toggleFavs()"><i id="favorites-icon" class="fas fa-heart"></i></button>
+
         <section id="restaurant-container">
           <img id="restaurant-img" alt="restaurant"/>  
+          <ul id="breadcrumb" role="navigation" aria-label="breadcrumb">
+              <li><a href="/" aria-label="Restaurant Reviews" aria-current="page">Homepage</a></li>
+          </ul>
       </section>
       <!-- end of restaurant container -->
       
