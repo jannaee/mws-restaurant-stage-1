@@ -196,7 +196,7 @@ nav h1 a {
 }
 
 .loved {
-  color: red;
+  color: #01A7C2;
 }
 /* ====================== Submit a Review form ====================== */
 .reviewBox {
@@ -257,6 +257,10 @@ textarea {
   align-items: center;
   padding: -1px 40px 10px 24px;
   margin: 0;
+}
+
+.filterSelect > span {
+ display: inline-block;
 }
 
 .filter-options select {
@@ -549,6 +553,22 @@ ul#reviews-list li:nth-child(even):before  {
   #restaurants-list figure {
     width: 100vw;
   }
+
+  .filterSelect > span {
+    display: block;
+   }
+
+
+  .filter-options select {
+    margin-left: 5%;
+    width: 90%;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid #01A7C2;
+}
+
+
+
 }
 
 
@@ -575,6 +595,7 @@ ul#reviews-list li:nth-child(even):before  {
     margin-top: 0;
     padding: 50px 0 0 0;
   }
+
   #restaurant-container { border-bottom: none;}
   
   section .name-location {
