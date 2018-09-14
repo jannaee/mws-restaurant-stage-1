@@ -40,9 +40,10 @@
         <p id="restaurant-name"></p>
         <img id="restaurant-img" alt="image of restaurant" />  
         <!-- Favorites Feature -->
-        <button id="favorites-icon">
-          <i class="fas fa-heart"></i>
+        <button class="heartHalo" onclick="toggleFavs()">
+            <i id="favorites-icon" class="fas fa-heart animated rubberBand"></i>
         </button>
+        
         <h4>Address</h4>
         <p id="restaurant-address"></p>
         <table id="restaurant-hours"></table>

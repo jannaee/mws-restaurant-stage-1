@@ -163,32 +163,78 @@ nav h1 a {
   border: 1px solid #ccc;
 }
 /* ====================== Favorites Feature ====================== */
-button#favorites-icon .fa-heart {
-  color: #0275d8;
-  font-size: 18px;
+
+.fa-heart {
+  font-size: 1.05em;
+}
+
+.heartHalo {
   border-radius: 30px 30px;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, .3);
-  padding: 12px;
-  z-index: 1000;
-  background-color: white;
-  margin-right: 5%;
-}
-
-button#favorites-icon ::after {
-  color: #0275d8;
-}
-
-button#favorites-icon .fa-heart:hover {
-  color: white;
-  background-color: #0275d8;
-}
- 
-section #favorites-icon {
+  padding: 14px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  width: 49px;
+  height: 48px;
+  font-size: 19px;
   position: relative;
-  top: -7vh;
-  /* left: 17vw; */
-  text-align: right;
+    top: -47px;
+    z-index: 1000;
+    background: white;
+    left: 24px;
 }
+
+.loved {
+  color: red;
+}
+/* ====================== Submit a Review form ====================== */
+.reviewBox {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+
+.reviewBoxItem {
+  font-size: .9em;
+  color: #000000;
+  margin-top: 10px;
+  border: 1px solid #01A7C2;
+  border-radius: 3px 3px;
+  padding: 15px;
+}
+
+textarea {
+  height: 20vh;
+  font-family: inherit;
+  font-size: .9em;
+  color: #000000;
+  line-height: 1.5em;
+}
+
+
+.submitButton {
+    display: inline-block;
+    height: 40px;
+    width: 85px;
+    border-radius: 3px 3px;
+    background-color: #01A7C2;
+    color: #ffffff;
+}
+
+.submitButton:hover {
+  background-color: green;
+}
+
+.cancelButton {
+    display: inline-block;
+    height: 40px;
+    width: 85px;
+    border-radius: 3px 3px;
+    color: grey;
+}
+
+.cancelButton:hover {
+    color:#444444;
+}
+
 
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
@@ -282,6 +328,7 @@ section #favorites-icon {
   font-size: .75em;
   padding: 0 20px
 }
+
 button, input[type="submit"], input[type="reset"] {
   background: none;
   color: inherit;

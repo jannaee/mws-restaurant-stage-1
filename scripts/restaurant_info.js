@@ -116,16 +116,17 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 
   if (!reviews) {
     const noReviews = document.createElement('p');
-    noReviews.innerHTML = 'No reviews yet!';
+    noReviews.innerHTML = 'Be the first to leave a review.';
     container.appendChild(noReviews);
     const reviewForm = document.createElement('form');
-    reviewForm.innerHTML = `  First name: <input type="text" name="firstname" value="Mickey">
-    <br>
-    Last name: <input type="text" name="lastname" value="Mouse">
-    <br>
-    Comments: <textarea name="comment" form="usrform">Enter text here...</textarea>
-    <br>
-    <input type="submit" value="Submit">`;
+    reviewForm.innerHTML = 
+    `<span class="reviewBox">
+        <input class="reviewBoxItem" placeholder="Username" type="">
+        <textarea class="reviewBoxItem" placeholder="Share details about your experience."></textarea>
+        <br />
+        <span><button class="submitButton">Submit</button>
+        <button class="cancelButton">Cancel</button></span>
+    </span>`;
     container.appendChild(reviewForm);
 
     return;
@@ -186,3 +187,12 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+
+/**
+ * Add a favorites button.
+ */
+toggleFavs = () => {
+  var myBtn = document.getElementById('favorites-icon');
+     myBtn.classList.toggle('loved');
+ }
