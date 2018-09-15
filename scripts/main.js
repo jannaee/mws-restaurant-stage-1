@@ -4,8 +4,6 @@ let restaurants,
 var newMap
 var markers = []
 
-
-
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -24,6 +22,7 @@ fetchNeighborhoods = () => {
       console.error(error);
     } else {
       self.neighborhoods = neighborhoods;
+      //console.table(self.neighborhoods);
       fillNeighborhoodsHTML();
     }
   });
