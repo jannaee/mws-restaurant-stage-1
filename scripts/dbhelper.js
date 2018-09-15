@@ -18,9 +18,13 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 1337;
-    return `http://localhost:${port}/`;
+    return `http://localhost:${port}/restaurants`;
   }
 
+  static get REVIEWS_URL() {
+    const port = 1337;
+    return `http://localhost:${port}/reviews`;
+  }
   /**
    * Fetch all restaurants.
    */
@@ -28,14 +32,14 @@ class DBHelper {
     /**
      * Using Fetch all Restaurants API to fetch data
      */
-    fetch('http://localhost:1337/restaurants')
+    fetch(DBHelper.DATABASE_URL)
     .then(
       function(response){
         return response.json();
       })
       .then(
         function addData(data){//how we get data from the server
-          console.log('A ok so far'+ data);
+          //console.log('A ok so far'+ data);
           const dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
             const storeKey = upgradeDb.createObjectStore('RestaurantStore', {keyPath: 'id'});
             }); //End of opening database
@@ -171,31 +175,50 @@ class DBHelper {
 
 
   /**
-   * Fetch all reviews by id
-   */
+   * Fetch all reviews from server, store into IndexDb cache
+   
   static fetchReviews(callback) {
-    /**
-     * Using Fetch all Restaurants API to fetch data
-     */
-    fetch('http://localhost:1337/restaurants')
-    .then()
+    alert('here');
+    fetch('http://localhost:1337/reviews')
+    //promises with a response object in json
+    .then(function(responseTwo){return responseTwo.json();})
+    .then(function addData(data){console.log(data);})
+    callback(data)
   }
+*/
 
+  /**
+   * Fetch all reviews by id
+    */
   static fetchReviewsById(id, callback) {
-    // fetch all restaurants with proper error handling.
-    DBHelper.fetchReviews((error, restaurants) => {
-      if (error) {
-        callback(error, null);
-      } else {
-        const restaurant = restaurants.find(r => r.id == id);
-        if (restaurant) { // Got the restaurant
-          callback(null, restaurant);
-        } else { // Restaurant does not exist in the database
-          callback('Restaurant does not exist', null);
-        }
-      }
-    });
+    // fetch all reviews with proper error handling.
+    const reviewsPath = DBHelper.REVIEWS_URL + '/?restaurant_id' + id;
+    fetch(reviewsPath)
+    //promises with a response object in json
+    .then(function(response){
+      response.json().then(
+        
+        function addData(data){
+          console.log(data);
+          callback(null, data)
+        })
+    })
+    
+    // DBHelper.fetchReviews((error, reviews) => {
+    //   if (error) {
+    //     callback(error, null);
+    //   } else {
+    //     const review = reviews.find(r => r.id == id);
+    //     if (review) { // Got the restaurant
+    //       callback(null, review);
+    //     } else { 
+    //       callback('Review does not exist', null);
+    //     }
+    //   }
+    // });
   }
+  
+
 
   /**
    * Restaurant page URL.
