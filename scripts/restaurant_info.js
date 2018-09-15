@@ -63,6 +63,7 @@ fetchRestaurantFromURL = (callback) => {
 /**
  * Create restaurant HTML and add it to the webpage
  */
+
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
@@ -193,6 +194,6 @@ getParameterByName = (name, url) => {
  * Add a favorites button.
  */
 toggleFavs = () => {
-  var myBtn = document.getElementById('favorites-icon');
+  const myBtn = document.getElementById('favorites-icon');
      myBtn.classList.toggle('loved');
  }

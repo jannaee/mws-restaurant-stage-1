@@ -14,21 +14,19 @@ class DBHelper {
 
    /**
    * Database URL.
-   * Change this to restaurants.json file location on your server.
+   * Changed to root level of database to access reviews and restaurants details 
    */
   static get DATABASE_URL() {
     const port = 1337;
-    return `http://localhost:${port}/restaurants`;
+    return `http://localhost:${port}/`;
   }
-
-
 
   /**
    * Fetch all restaurants.
    */
   static fetchRestaurants(callback) {
     /**
-     * Using Fetch API to fetch data
+     * Using Fetch all Restaurants API to fetch data
      */
     fetch('http://localhost:1337/restaurants')
     .then(
@@ -36,13 +34,11 @@ class DBHelper {
         return response.json();
       })
       .then(
-        
         function addData(data){//how we get data from the server
           console.log('A ok so far'+ data);
           const dbPromise = idb.open('TheDepot', 1, function(upgradeDb){
             const storeKey = upgradeDb.createObjectStore('RestaurantStore', {keyPath: 'id'});
             }); //End of opening database
-        
           dbPromise.then(
             function(db){//put the data into the db
               var tx = db.transaction('RestaurantStore', 'readwrite');
@@ -59,13 +55,9 @@ class DBHelper {
                 var cache = tx.objectStore('RestaurantStore');
                 return cache.getAll();
               })
-          
           })
           callback(null, data)
         })
- 
-    
-  
   }//end of fetchRestaurants
 
 
@@ -173,6 +165,34 @@ class DBHelper {
         // Remove duplicates from cuisines
         const uniqueCuisines = cuisines.filter((v, i) => cuisines.indexOf(v) == i)
         callback(null, uniqueCuisines);
+      }
+    });
+  }
+
+
+  /**
+   * Fetch all reviews by id
+   */
+  static fetchReviews(callback) {
+    /**
+     * Using Fetch all Restaurants API to fetch data
+     */
+    fetch('http://localhost:1337/restaurants')
+    .then()
+  }
+
+  static fetchReviewsById(id, callback) {
+    // fetch all restaurants with proper error handling.
+    DBHelper.fetchReviews((error, restaurants) => {
+      if (error) {
+        callback(error, null);
+      } else {
+        const restaurant = restaurants.find(r => r.id == id);
+        if (restaurant) { // Got the restaurant
+          callback(null, restaurant);
+        } else { // Restaurant does not exist in the database
+          callback('Restaurant does not exist', null);
+        }
       }
     });
   }
