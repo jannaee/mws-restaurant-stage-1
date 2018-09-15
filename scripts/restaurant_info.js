@@ -1,4 +1,4 @@
-let restaurant;
+let restaurant, review;
 var newMap;
 
 /**
@@ -6,6 +6,7 @@ var newMap;
  */
 document.addEventListener('DOMContentLoaded', (event) => {  
   initMap();
+  fetchReviews();
 });
 
 /**
@@ -104,6 +105,18 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     hours.appendChild(row);
   }
+}
+
+fetchReviews = () => {
+  DBHelper.fetchReviews((error, reviews)=>{
+    if (error){
+      console.log(`An error with getting reviews information has occured ${error}`);
+    } else {
+      self.reviews = reviews;
+      console.log(`I've fetched all reviews ${self.reviews}`);
+
+    }
+  })
 }
 
 /**

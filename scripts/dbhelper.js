@@ -2,7 +2,6 @@
  * Common database helper functions.
  */
 
-
 //TO DO: 
 //Check to see if there is data being pulled from the server
 //If there is data return it
@@ -21,10 +20,7 @@ class DBHelper {
     return `http://localhost:${port}/restaurants`;
   }
 
-  static get REVIEWS_URL() {
-    const port = 1337;
-    return `http://localhost:${port}/reviews`;
-  }
+
   /**
    * Fetch all restaurants.
    */
@@ -191,9 +187,12 @@ class DBHelper {
 
   // Doug Brown [Project Coach] [2 hours ago]
   // Everything should then flow to the callback for displaying reviews after that
-
+  static get REVIEWS_URL() {
+    const port = 1337;
+    return `http://localhost:${port}/reviews`;
+  } 
   /**
-   * Using Fetch all Reviews to fetch data
+   * This is the Prototype for any function needing to access the reviews url
     */
   static fetchReviews(callback) {
     const reviewsUrl = DBHelper.REVIEWS_URL;
@@ -228,7 +227,7 @@ class DBHelper {
               }
             ).catch(
               function (error) {
-                console.log(`Working offline for reviews information ${error}`);
+                console.log(`Error with Reviews was caught:  ${error}`);
                 dbPromise.then(function (db) {
                   let tx = db.transaction('ReviewsStore');
                   let cache = tx.objectStore('ReviewsStore');
@@ -244,18 +243,18 @@ class DBHelper {
 
   static fetchReviewsById(id, callback) {
     // fetch all reviews with proper error handling.
-    DBHelper.fetchRestaurants((error, restaurants) => {
+    DBHelper.fetchReviews((error, reviews) => {
       if (error) {
         callback(error, null);
       } else {
-        const restaurant = restaurants.find(r => r.id == id);
+        const review = reviews.find(r => r.id == id);
         //the first element in restaurants array who's id value matches this id
 
-        if (restaurants) { // Got the restaurant
+        if (review) { // Got the restaurant
           //console.log(restaurant);
-          callback(null, restaurant);
+          callback(null, review);
         } else { // Restaurant does not exist in the database
-          callback('Restaurant does not exist', null);
+          callback('Reviews does not exist', null);
         }
       }
     });
