@@ -113,7 +113,8 @@ fetchReviews = () => {
       console.log(`An error with getting reviews information has occured ${error}`);
     } else {
       self.reviews = reviews;
-      console.log(`I've fetched all reviews ${self.reviews}`);
+      console.table(self.reviews);
+      console.log(self.reviews[0].comments);
 
     }
   })

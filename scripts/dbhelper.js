@@ -211,7 +211,7 @@ class DBHelper {
           function addReviewsData(reviewsData) {
             const dbPromise = idb.open(
               'TheReviewsDepot', 1, function (upgradeDb) {
-              upgradeDB.createObjectStore('ReviewsStore', {
+                upgradeDb.createObjectStore('ReviewsStore', {
                 keyPath: 'id'
               });
             });
@@ -221,7 +221,7 @@ class DBHelper {
                 let store = tx.objectStore('ReviewsStore');
                 reviewsData.forEach(reviewsDatas => {
                   let placedData = store.put(reviewsDatas);
-                  console.table(placedData);
+                  //console.table(placedData);
                   return placedData;
                 });
               }
