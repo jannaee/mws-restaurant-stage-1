@@ -19,6 +19,12 @@ This is a three part Udacity course where I will incrementally convert a static 
 Go to /server directory and run
 # node server
 ```
+  4b. On updating sails config
+  If the server is not running and an error regarding a hook is thrown try (typically when I bring work down to the laptop)
+  go to server/config/global.js and uncomment line 21, line 31, line 40, and line 60
+  then spin up the server again with ```node server```
+  (Not sure if I have to redo these comments back onto the desktop)
+
 5. To access API server environment
 ```debug: Environment : development
 ```debug: Port        : 1337
