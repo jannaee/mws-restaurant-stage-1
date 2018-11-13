@@ -201,7 +201,6 @@ class DBHelper {
       return;
     } else {
 
-
       fetch(reviewsUrl).then(
         function (response) {
           let array = response.json();
